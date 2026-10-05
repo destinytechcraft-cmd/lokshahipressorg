@@ -1,0 +1,6 @@
+{
+  "name": "Lokshahi Patrakar Mahasangh Bharat",
+  "description": "End-to-end wireframe for Lokshahi Patrakar Mahasangh Bharat website (Marathi / English).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
