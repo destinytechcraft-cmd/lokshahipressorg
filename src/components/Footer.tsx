@@ -1,52 +1,107 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { navItems } from './Navigation';
+import { Logo } from './Logo';
+import { FacebookIcon, InstagramIcon, YouTubeIcon, XIcon, WhatsAppIcon } from './SocialIcons';
 
 const footerValues = {
-  mr: ['सत्य', 'न्याय', 'लोकशाही', 'संविधान', 'स्वातंत्र्य', 'समानता', 'पारदर्शकता', 'जनहित'],
-  en: ['Truth', 'Justice', 'Democracy', 'Constitution', 'Freedom', 'Equality', 'Transparency', 'Public Interest'],
+  mr: [
+    'सत्य',
+    'न्याय',
+    'लोकशाही',
+    'संविधान',
+    'स्वातंत्र्य',
+    'समानता',
+    'सामाजिक बांधिलकी',
+    'पत्रकारांचा सन्मान',
+    'जनहित',
+    'पारदर्शकता',
+  ],
+  en: [
+    'Truth',
+    'Justice',
+    'Democracy',
+    'Constitution',
+    'Freedom',
+    'Equality',
+    'Social Accountability',
+    'Journalist Dignity',
+    'Public Interest',
+    'Transparency',
+  ],
 };
 
-const footerSocials = ['FB', 'IG', 'YT', 'X', 'WA'];
+const footerSocials = [
+  { name: 'Facebook', short: 'FB', bg: 'hover:bg-[#2855A5]' },
+  { name: 'Instagram', short: 'IG', bg: 'hover:bg-[#E30620]' },
+  { name: 'YouTube', short: 'YT', bg: 'hover:bg-[#E30620]' },
+  { name: 'X', short: 'X', bg: 'hover:bg-black' },
+  { name: 'WhatsApp', short: 'WA', bg: 'hover:bg-[#287A18]' },
+];
 
 export function Footer({ onNavigate }: { onNavigate?: (path: string) => void }) {
   const { t, lang } = useLanguage();
 
   return (
-    <footer className="bg-neutral-800 py-10 text-neutral-300">
+    <footer className="bg-[#172A4A] py-12 text-[#F7F3EC] border-t-4 border-[#E30620]">
       <div className="mx-auto w-full max-w-6xl px-4">
-        {/* Core Values / Ideals */}
-        <div className="mb-8 flex flex-wrap justify-center gap-x-4 gap-y-2 text-center">
-          {footerValues[lang].map((val, idx) => (
-            <span key={val} className="text-lg font-bold sm:text-2xl text-neutral-100 flex items-center">
-              {val}
-              {idx < footerValues[lang].length - 1 ? (
-                <span className="ml-4 text-neutral-600">•</span>
-              ) : null}
-            </span>
-          ))}
+        {/* Core Values Strip as requested in PDF Page 17 */}
+        <div className="mb-10 pb-8 border-b border-white/10 text-center">
+          <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#E30620] block mb-3">
+            OUR VALUES — {lang === 'mr' ? 'आमची मूल्ये' : 'CORE PRINCIPLES'}
+          </span>
+          <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-2">
+            {footerValues[lang].map((val, idx) => (
+              <React.Fragment key={val}>
+                <span className="text-xs sm:text-sm font-bold text-[#F7F3EC] hover:text-[#E30620] transition-colors">
+                  {val}
+                </span>
+                {idx < footerValues[lang].length - 1 && (
+                  <span className="text-[#E6530C] select-none font-bold">•</span>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
 
-        {/* 3 Columns */}
-        <div className="grid gap-8 border-t border-neutral-700 pt-8 md:grid-cols-3">
-          {/* Brand Info */}
-          <div>
+        {/* 3 Columns Layout */}
+        <div className="grid gap-8 md:grid-cols-12 text-left">
+          {/* Brand Info & Motto from PDF Page 17 */}
+          <div className="md:col-span-5 space-y-3">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-neutral-600 text-[9px] font-bold text-neutral-400">
-                {t('logo')}
+              <Logo size={52} className="h-12 w-12 sm:h-14 sm:w-14 shrink-0 drop-shadow-md" />
+              <div>
+                <span className="text-sm font-black text-white tracking-wide block">
+                  LOKSHAHI PATRAKAR MAHASANGH BHARAT
+                </span>
+                <span className="text-[11px] font-bold text-[#E30620]">
+                  {t('brand')}
+                </span>
               </div>
-              <span className="text-sm font-bold text-neutral-100">{t('brand')}</span>
             </div>
-            <p className="mt-3 text-xs text-neutral-400 leading-relaxed">{t('tagline')}</p>
-            <p className="mt-2 text-[11px] text-neutral-500">{t('values')}</p>
+
+            <p className="text-xs text-[#F7F3EC]/90 leading-relaxed font-semibold pt-1">
+              {lang === 'mr'
+                ? 'पत्रकारांच्या न्याय, हक्क आणि सन्मानासाठी… सर्वसामान्यांच्या न्यायासाठी… लोकशाहीच्या संरक्षणासाठी…'
+                : 'For the rights, justice and honor of journalists… For public justice… For safeguarding democracy…'}
+            </p>
+
+            <p className="text-[11px] text-[#F7F3EC]/60">
+              {t('values')}
+            </p>
+
+            <div className="pt-2 text-xs text-[#F7F3EC]/80">
+              <span className="font-bold text-white block mb-0.5">National Central Office:</span>
+              <span>Mumbai</span>
+            </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <div className="mb-3 text-[10px] font-bold uppercase tracking-widest text-neutral-400">
+          {/* Quick Links from PDF Page 18 */}
+          <div className="md:col-span-4">
+            <div className="mb-3 text-[10px] font-black uppercase tracking-widest text-[#E30620]">
               Quick Links
             </div>
-            <div className="flex flex-wrap gap-x-4 gap-y-2">
+            <div className="grid grid-cols-2 gap-x-3 gap-y-2">
               {navItems.map((item) => (
                 <button
                   key={item.href}
@@ -55,7 +110,7 @@ export function Footer({ onNavigate }: { onNavigate?: (path: string) => void }) 
                     onNavigate?.(item.href);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="text-xs text-neutral-400 hover:text-neutral-100 transition-colors cursor-pointer text-left"
+                  className="text-xs text-[#F7F3EC]/80 hover:text-white hover:underline transition-colors cursor-pointer text-left truncate"
                 >
                   {t(item.key)}
                 </button>
@@ -63,31 +118,73 @@ export function Footer({ onNavigate }: { onNavigate?: (path: string) => void }) 
             </div>
           </div>
 
-          {/* Social Media Links */}
-          <div>
-            <div className="mb-3 text-[10px] font-bold uppercase tracking-widest text-neutral-400">
-              Social
+          {/* Social Channels & Contact */}
+          <div className="md:col-span-3 space-y-3">
+            <div className="text-[10px] font-black uppercase tracking-widest text-[#E30620]">
+              Social Media
             </div>
-            <div className="flex flex-wrap gap-2">
-              {footerSocials.map((platform) => (
-                <span
-                  key={platform}
-                  className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-neutral-600 text-[10px] font-bold text-neutral-400 hover:border-neutral-400 hover:text-neutral-200 transition-colors cursor-pointer"
-                  title={platform}
-                >
-                  {platform}
-                </span>
-              ))}
+            <div className="flex flex-wrap items-center gap-2">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Facebook"
+                className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 hover:bg-[#1877F2] transition-all hover:scale-110 shadow-2xs cursor-pointer"
+              >
+                <FacebookIcon size={20} />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Instagram"
+                className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 hover:bg-[#E1306C] transition-all hover:scale-110 shadow-2xs cursor-pointer"
+              >
+                <InstagramIcon size={20} />
+              </a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="YouTube"
+                className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 hover:bg-[#FF0000] transition-all hover:scale-110 shadow-2xs cursor-pointer"
+              >
+                <YouTubeIcon size={20} />
+              </a>
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="X (Twitter)"
+                className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 hover:bg-black transition-all hover:scale-110 shadow-2xs cursor-pointer"
+              >
+                <XIcon size={20} />
+              </a>
+              <a
+                href="https://whatsapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="WhatsApp"
+                className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 hover:bg-[#25D366] transition-all hover:scale-110 shadow-2xs cursor-pointer"
+              >
+                <WhatsAppIcon size={20} />
+              </a>
             </div>
-            <p className="mt-3 text-[11px] text-neutral-500">
-              {lang === 'mr' ? 'सोशल मीडियावर आमच्याशी जुडा' : 'Connect with us on social media'}
+            <p className="text-[11px] text-[#F7F3EC]/70 pt-1 leading-relaxed">
+              Email:{' '}
+              <a href="mailto:help@lokshahipressorg.com" className="text-white hover:underline font-semibold">
+                help@lokshahipressorg.com
+              </a>
             </p>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-8 border-t border-neutral-700 pt-4 text-center text-[11px] text-neutral-500">
-          © 2026 Lokshahi Patrakar Mahasangh Bharat. All Rights Reserved.
+        {/* Copyright Line from PDF Page 18 */}
+        <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-[#F7F3EC]/60 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <span>© 2026 Lokshahi Patrakar Mahasangh Bharat. All Rights Reserved.</span>
+          <span className="text-[11px] text-[#F7F3EC]/40">
+            A collective voice for journalists, citizens and democratic values.
+          </span>
         </div>
       </div>
     </footer>

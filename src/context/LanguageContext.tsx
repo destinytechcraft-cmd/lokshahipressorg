@@ -143,23 +143,23 @@ export const dict: Record<DictKey, { mr: string; en: string }> = {
     en: 'Events',
   },
   sec_membership: {
-    mr: 'सदस्यत्व',
+    mr: 'सदस्यत्व (Membership)',
     en: 'Membership',
   },
   sec_helpdesk: {
-    mr: 'पत्रकार मदत कक्ष',
+    mr: 'पत्रकार मदत कक्ष (Journalist Help Desk)',
     en: 'Journalist Help Desk',
   },
   sec_grievance: {
-    mr: 'जन तक्रार निवारण',
-    en: 'Public Grievance',
+    mr: 'जन तक्रार निवारण (Public Grievance)',
+    en: 'Public Grievance Redressal',
   },
   sec_leadership: {
     mr: 'टीम लोकशाही — राष्ट्रीय नेतृत्व',
-    en: 'National Leadership',
+    en: 'Team Lokshahi — National Leadership',
   },
   sec_contact: {
-    mr: 'संपर्क',
+    mr: 'संपर्क (Contact Us)',
     en: 'Contact Us',
   },
   sec_org_network: {
@@ -175,8 +175,8 @@ export const dict: Record<DictKey, { mr: string; en: string }> = {
     en: 'Home',
   },
   page_subtitle: {
-    mr: 'पृष्ठ आशयाची जागा — वायरफ्रेम',
-    en: 'Page content placeholder — wireframe',
+    mr: 'लोकशाही पत्रकार महासंघ भारत — अधिकृत माहिती व दस्तऐवज',
+    en: 'Lokshahi Patrakar Mahasangh Bharat — Official Information & Documentation',
   },
   image_ph: {
     mr: 'प्रतिमा',

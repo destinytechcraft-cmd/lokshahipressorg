@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { cn } from './ui/WireframePrimitives';
+import { Logo } from './Logo';
 import type { DictKey, Language } from '../types';
 
 export interface NavItemDef {
@@ -38,12 +39,12 @@ export function LanguageDropdown() {
         type="button"
         onClick={() => setOpen((prev) => !prev)}
         onBlur={() => setTimeout(() => setOpen(false), 200)}
-        className="flex items-center gap-1.5 rounded-md border-2 border-neutral-400 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-700 hover:bg-neutral-50 transition-colors cursor-pointer"
+        className="flex items-center gap-1.5 rounded-lg border border-[#172A4A]/25 bg-white px-3 py-1.5 text-xs font-bold text-[#172A4A] hover:border-[#E30620] hover:text-[#E30620] transition-colors cursor-pointer shadow-2xs"
         aria-haspopup="listbox"
         aria-expanded={open}
       >
         <svg
-          className="h-4 w-4"
+          className="h-4 w-4 text-[#2855A5]"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -73,7 +74,7 @@ export function LanguageDropdown() {
 
       {open && (
         <ul
-          className="absolute right-0 z-50 mt-1 w-32 overflow-hidden rounded-md border-2 border-neutral-300 bg-white shadow-md animate-in fade-in zoom-in-95 duration-100"
+          className="absolute right-0 z-50 mt-1 w-32 overflow-hidden rounded-xl border border-[#172A4A]/20 bg-white shadow-lg animate-in fade-in zoom-in-95 duration-100"
           role="listbox"
         >
           {languages.map((item) => (
@@ -86,10 +87,10 @@ export function LanguageDropdown() {
                   setOpen(false);
                 }}
                 className={cn(
-                  'block w-full px-3 py-2 text-left text-xs font-medium transition-colors cursor-pointer',
+                  'block w-full px-3.5 py-2 text-left text-xs font-bold transition-colors cursor-pointer',
                   lang === item.value
-                    ? 'bg-neutral-100 text-neutral-900 font-semibold'
-                    : 'text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900'
+                    ? 'bg-[#172A4A] text-white'
+                    : 'text-[#172A4A] hover:bg-[#F7F3EC] hover:text-[#E30620]'
                 )}
               >
                 {item.label}
@@ -119,27 +120,32 @@ export function Header({
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b-2 border-neutral-300 bg-white/95 backdrop-blur-md">
-      <div className="mx-auto flex w-full max-w-6xl items-center gap-3 px-4 py-3">
+    <header className="sticky top-0 z-40 border-b border-[#172A4A]/20 bg-white/95 backdrop-blur-md shadow-2xs">
+      {/* Tricolor top indicator band */}
+      <div className="h-1 w-full flex">
+        <div className="h-full flex-1 bg-[#E6530C]" />
+        <div className="h-full flex-1 bg-white" />
+        <div className="h-full flex-1 bg-[#287A18]" />
+      </div>
+
+      <div className="mx-auto flex w-full max-w-6xl items-center gap-3 px-4 py-2.5">
         <button
           type="button"
           onClick={() => handleNavClick('/')}
-          className="flex min-w-0 items-center gap-3 text-left cursor-pointer group"
+          className="flex min-w-0 items-center gap-2.5 text-left cursor-pointer group"
         >
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-neutral-400 text-[9px] font-bold text-neutral-400 group-hover:border-neutral-700 group-hover:text-neutral-700 transition-colors">
-            {t('logo')}
-          </div>
+          <Logo size={44} className="h-10 w-10 sm:h-11 sm:w-11 shrink-0 group-hover:scale-105 transition-transform drop-shadow-xs" />
           <div className="min-w-0">
-            <div className="truncate text-sm font-bold text-neutral-700 group-hover:text-neutral-900 transition-colors">
+            <div className="truncate text-base sm:text-lg font-black tracking-tight text-[#172A4A] group-hover:text-[#E30620] transition-colors">
               {t('brand')}
             </div>
-            <div className="truncate text-[11px] text-neutral-500">
-              {t('values')}
+            <div className="truncate text-[11px] font-semibold text-[#E30620] flex items-center gap-1.5">
+              <span>{t('values')}</span>
             </div>
           </div>
         </button>
 
-        <div className="ml-auto flex items-center gap-2">
+        <div className="ml-auto flex items-center gap-2.5">
           <LanguageDropdown />
           <button
             type="button"
@@ -147,15 +153,15 @@ export function Header({
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-nav"
-            className="flex h-9 w-9 items-center justify-center rounded-md border-2 border-neutral-400 bg-white text-neutral-700 md:hidden cursor-pointer hover:bg-neutral-50 transition-colors"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#172A4A]/30 bg-white text-[#172A4A] md:hidden cursor-pointer hover:bg-[#F7F3EC] transition-colors"
           >
             {mobileMenuOpen ? (
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M18 6 6 18" />
                 <path d="m6 6 12 12" />
               </svg>
             ) : (
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M4 5h16" />
                 <path d="M4 12h16" />
                 <path d="M4 19h16" />
@@ -166,8 +172,8 @@ export function Header({
       </div>
 
       {/* Desktop Navigation */}
-      <nav className="hidden border-t-2 border-dashed border-neutral-200 md:block">
-        <div className="mx-auto flex w-full max-w-6xl flex-wrap gap-x-1 gap-y-1 px-4 py-2">
+      <nav className="hidden border-t border-[#172A4A]/10 bg-[#F7F3EC]/70 md:block">
+        <div className="mx-auto flex w-full max-w-6xl flex-wrap gap-x-1 gap-y-1 px-4 py-1.5">
           {navItems.map((item) => {
             const isActive = currentPath === item.href;
             return (
@@ -177,10 +183,10 @@ export function Header({
                 onClick={() => handleNavClick(item.href)}
                 aria-current={isActive ? 'page' : undefined}
                 className={cn(
-                  'rounded px-2.5 py-1 text-xs font-medium transition-colors cursor-pointer',
+                  'rounded-md px-2.5 py-1 text-xs font-bold transition-all cursor-pointer select-none',
                   isActive
-                    ? 'bg-neutral-800 text-white'
-                    : 'text-neutral-500 hover:bg-neutral-100 hover:text-neutral-800'
+                    ? 'bg-[#172A4A] text-white shadow-2xs'
+                    : 'text-[#172A4A]/80 hover:bg-[#172A4A]/10 hover:text-[#E30620]'
                 )}
               >
                 {t(item.key)}
@@ -192,7 +198,7 @@ export function Header({
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <nav id="mobile-nav" className="border-t-2 border-dashed border-neutral-200 md:hidden bg-white">
+        <nav id="mobile-nav" className="border-t border-[#172A4A]/15 md:hidden bg-white shadow-xl animate-in slide-in-from-top-2 duration-150">
           <ul className="mx-auto flex w-full max-w-6xl flex-col gap-1 px-4 py-3">
             {navItems.map((item) => {
               const isActive = currentPath === item.href;
@@ -203,10 +209,10 @@ export function Header({
                     onClick={() => handleNavClick(item.href)}
                     aria-current={isActive ? 'page' : undefined}
                     className={cn(
-                      'block w-full text-left rounded-md px-3 py-2 text-sm font-medium transition-colors cursor-pointer',
+                      'block w-full text-left rounded-lg px-3.5 py-2.5 text-sm font-bold transition-colors cursor-pointer',
                       isActive
-                        ? 'bg-neutral-800 text-white'
-                        : 'text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900'
+                        ? 'bg-[#172A4A] text-white'
+                        : 'text-[#172A4A] hover:bg-[#F7F3EC] hover:text-[#E30620]'
                     )}
                   >
                     {t(item.key)}
