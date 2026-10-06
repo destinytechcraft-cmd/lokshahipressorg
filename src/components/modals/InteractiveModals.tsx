@@ -43,8 +43,14 @@ export function JoinMembershipModal({
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#172A4A]/60 p-4 backdrop-blur-xs animate-in fade-in duration-200">
-      <div className="relative w-full max-w-lg rounded-2xl border-2 border-[#172A4A]/30 bg-white p-6 sm:p-7 shadow-2xl">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#172A4A]/60 p-3 sm:p-4 backdrop-blur-xs animate-in fade-in duration-200"
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto rounded-2xl border-2 border-[#172A4A]/30 bg-white p-5 sm:p-7 shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="flex items-center justify-between border-b border-[#172A4A]/10 pb-4">
           <div className="flex items-center gap-3">
             <Logo size={42} className="h-10 w-10 shrink-0 drop-shadow-xs" />
@@ -180,8 +186,14 @@ export function QuickIssueModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#172A4A]/60 p-4 backdrop-blur-xs animate-in fade-in duration-200">
-      <div className="relative w-full max-w-md rounded-2xl border-2 border-[#172A4A]/30 bg-white p-6 shadow-2xl">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#172A4A]/60 p-3 sm:p-4 backdrop-blur-xs animate-in fade-in duration-200"
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-md max-h-[92vh] overflow-y-auto rounded-2xl border-2 border-[#172A4A]/30 bg-white p-5 sm:p-6 shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="flex items-center justify-between border-b border-[#172A4A]/10 pb-3">
           <div className="flex items-center gap-2.5">
             <Logo size={36} className="h-9 w-9 shrink-0 drop-shadow-xs" />

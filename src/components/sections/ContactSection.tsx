@@ -82,12 +82,12 @@ export function ContactSection() {
 
               {contactInfo.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3.5 border-b border-[#172A4A]/10 pb-3.5">
-                  <span className="text-lg mt-0.5">{item.icon}</span>
-                  <div>
+                  <span className="text-lg mt-0.5 shrink-0">{item.icon}</span>
+                  <div className="min-w-0 flex-1">
                     <span className="text-xs font-bold text-[#172A4A]/60 block mb-0.5">
                       {lang === 'mr' ? item.labelMr : item.labelEn}
                     </span>
-                    <span className="text-xs sm:text-sm text-[#172A4A] font-bold leading-relaxed">
+                    <span className="text-xs sm:text-sm text-[#172A4A] font-bold leading-relaxed break-words">
                       {lang === 'mr' ? item.valMr : item.valEn}
                     </span>
                   </div>

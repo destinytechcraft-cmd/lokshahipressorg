@@ -39,12 +39,12 @@ export function LanguageDropdown() {
         type="button"
         onClick={() => setOpen((prev) => !prev)}
         onBlur={() => setTimeout(() => setOpen(false), 200)}
-        className="flex items-center gap-1.5 rounded-lg border border-[#172A4A]/25 bg-white px-3 py-1.5 text-xs font-bold text-[#172A4A] hover:border-[#E30620] hover:text-[#E30620] transition-colors cursor-pointer shadow-2xs"
+        className="flex items-center gap-1 sm:gap-1.5 rounded-lg border border-[#172A4A]/25 bg-white px-2 sm:px-3 py-1.5 text-xs font-bold text-[#172A4A] hover:border-[#E30620] hover:text-[#E30620] transition-colors cursor-pointer shadow-2xs"
         aria-haspopup="listbox"
         aria-expanded={open}
       >
         <svg
-          className="h-4 w-4 text-[#2855A5]"
+          className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#2855A5] shrink-0"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -57,9 +57,10 @@ export function LanguageDropdown() {
           <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
           <path d="M2 12h20" />
         </svg>
-        <span>{current?.label}</span>
+        <span className="hidden sm:inline">{current?.label}</span>
+        <span className="sm:hidden text-[11px] font-black uppercase">{lang === 'mr' ? 'मराठी' : 'EN'}</span>
         <svg
-          className={cn('h-3.5 w-3.5 transition-transform duration-200', open && 'rotate-180')}
+          className={cn('h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform duration-200 shrink-0', open && 'rotate-180')}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -132,20 +133,20 @@ export function Header({
         <button
           type="button"
           onClick={() => handleNavClick('/')}
-          className="flex min-w-0 items-center gap-2.5 text-left cursor-pointer group"
+          className="flex min-w-0 items-center gap-2 sm:gap-2.5 text-left cursor-pointer group flex-1"
         >
-          <Logo size={52} className="h-11 w-11 sm:h-12 sm:w-12 shrink-0 group-hover:scale-105 transition-transform drop-shadow-xs" />
-          <div className="min-w-0">
-            <div className="truncate text-base sm:text-lg font-black tracking-tight text-[#172A4A] group-hover:text-[#E30620] transition-colors">
+          <Logo size={48} className="h-9 w-9 sm:h-11 sm:w-11 shrink-0 group-hover:scale-105 transition-transform drop-shadow-xs" />
+          <div className="min-w-0 flex-1">
+            <div className="text-xs sm:text-base md:text-lg font-black tracking-tight text-[#172A4A] group-hover:text-[#E30620] transition-colors leading-tight line-clamp-2">
               {t('brand')}
             </div>
-            <div className="truncate text-[11px] font-semibold text-[#E30620] flex items-center gap-1.5">
+            <div className="text-[10px] sm:text-[11px] font-semibold text-[#E30620] flex items-center gap-1.5 leading-tight truncate">
               <span>{t('values')}</span>
             </div>
           </div>
         </button>
 
-        <div className="ml-auto flex items-center gap-2.5">
+        <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-2.5">
           <LanguageDropdown />
           <button
             type="button"
@@ -198,7 +199,7 @@ export function Header({
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <nav id="mobile-nav" className="border-t border-[#172A4A]/15 md:hidden bg-white shadow-xl animate-in slide-in-from-top-2 duration-150">
+        <nav id="mobile-nav" className="border-t border-[#172A4A]/15 md:hidden bg-white shadow-xl animate-in slide-in-from-top-2 duration-150 max-h-[calc(100vh-80px)] overflow-y-auto">
           <ul className="mx-auto flex w-full max-w-6xl flex-col gap-1 px-4 py-3">
             {navItems.map((item) => {
               const isActive = currentPath === item.href;

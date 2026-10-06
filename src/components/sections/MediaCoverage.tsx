@@ -85,7 +85,7 @@ export function MediaCoverage() {
           onMouseLeave={() => setIsPaused(false)}
           onTouchStart={() => setIsPaused(true)}
           onTouchEnd={() => setIsPaused(false)}
-          className="flex gap-5 overflow-x-auto pb-4 select-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          className="flex gap-4 sm:gap-5 overflow-x-auto pb-4 select-none touch-pan-x [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
           {scrollArticles.map((article, idx) => (
             <article
@@ -130,11 +130,11 @@ export function MediaCoverage() {
         {/* Modal for viewing selected press clipping - opens directly in-tab without redirecting */}
         {selectedArticle && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-[#172A4A]/60 p-4 backdrop-blur-xs animate-in fade-in duration-200"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#172A4A]/60 p-3 sm:p-4 backdrop-blur-xs animate-in fade-in duration-200"
             onClick={() => setSelectedArticle(null)}
           >
             <div
-              className="relative w-full max-w-xl rounded-2xl border-2 border-[#172A4A]/30 bg-white p-6 sm:p-8 shadow-2xl"
+              className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-2xl border-2 border-[#172A4A]/30 bg-white p-5 sm:p-8 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between border-b border-[#172A4A]/10 pb-4 mb-4">

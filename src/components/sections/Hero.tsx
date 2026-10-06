@@ -48,34 +48,34 @@ export function Hero({
 
       <div className="relative mx-auto grid w-full max-w-6xl gap-8 px-4 md:grid-cols-12 md:items-center">
         {/* Left Column: Headlines & Editorial Copy */}
-        <div className="flex flex-col gap-5 text-left md:col-span-7">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="w-fit rounded-full bg-[#172A4A] text-white px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] shadow-2xs">
+        <div className="flex flex-col gap-4 sm:gap-5 text-left md:col-span-7">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+            <span className="rounded-full bg-[#172A4A] text-white px-2.5 py-0.5 sm:px-3 sm:py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-wider shadow-2xs">
               {lang === 'mr' ? 'राष्ट्रीय माध्यम महासंघ' : 'NATIONAL MEDIA FEDERATION'}
             </span>
-            <span className="text-xs font-bold text-[#E30620] bg-white border border-[#E30620]/30 px-3 py-0.5 rounded-full shadow-2xs">
+            <span className="text-[11px] sm:text-xs font-bold text-[#E30620] bg-white border border-[#E30620]/30 px-2.5 py-0.5 sm:px-3 sm:py-0.5 rounded-full shadow-2xs">
               {lang === 'mr' ? 'राष्ट्रीय नोंदणीकृत व्यासपीठ' : 'Nationally Registered Body'}
             </span>
           </div>
 
           <div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-[#172A4A] tracking-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-black leading-tight text-[#172A4A] tracking-tight break-words">
               {lang === 'mr' ? (
                 <>
                   <span className="text-[#E30620]">सत्यासाठी</span> लढणार, <span className="text-[#172A4A]">अन्यायाला</span> भिडणार!
                 </>
               ) : (
                 <>
-                  <span className="text-[#E30620]">Fight for Truth</span>, Stand Against Injustice!
+                  <span className="text-[#E30620]">Fight for Truth</span>, <span className="text-[#172A4A]">Stand Against Injustice!</span>
                 </>
               )}
             </h1>
 
-            <div className="mt-3 flex items-center gap-2 text-xs sm:text-sm font-bold text-[#2855A5] uppercase tracking-wider">
+            <div className="mt-2.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm font-bold text-[#2855A5] uppercase tracking-wider break-words">
               <span>{t('values')}</span>
             </div>
 
-            <p className="mt-2 text-lg sm:text-xl font-black text-[#172A4A] italic border-l-4 border-[#E30620] pl-3 py-0.5">
+            <p className="mt-2 text-base sm:text-xl font-black text-[#172A4A] italic border-l-4 border-[#E30620] pl-3 py-0.5 leading-snug break-words">
               {lang === 'mr' ? '“जनतेच्या न्यायासाठी एक व्यासपीठ!”' : '“A National Platform for the People’s Justice!”'}
             </p>
           </div>
@@ -93,12 +93,12 @@ export function Hero({
             </p>
           </div>
 
-          {/* Strength Badges from PDF Page 18 */}
-          <div className="flex flex-wrap gap-2 pt-1">
+          {/* Strength Badges: 2x2 grid on mobile, flex wrap on desktop */}
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 pt-1">
             {heroBadges.map((badge, idx) => (
               <span
                 key={idx}
-                className={`rounded-lg border px-3 py-1.5 text-xs font-bold shadow-2xs ${badge.color}`}
+                className={`flex items-center justify-center text-center rounded-lg border px-2.5 py-1.5 text-xs font-bold shadow-2xs ${badge.color}`}
               >
                 {badge[lang]}
               </span>
@@ -106,18 +106,18 @@ export function Hero({
           </div>
 
           {/* Action buttons from PDF Page 18: JOIN US & RAISE YOUR VOICE */}
-          <div className="flex flex-wrap gap-3 pt-2">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2.5 sm:gap-3 pt-2">
             <WFButton
               variant="solid"
               onClick={onJoinClick}
-              className="px-6 py-2.5 text-sm font-bold shadow-md bg-[#E30620] hover:bg-[#c7051b]"
+              className="w-full sm:w-auto px-3 sm:px-6 py-2.5 text-xs sm:text-sm font-bold shadow-md bg-[#E30620] hover:bg-[#c7051b] text-center"
             >
               {t('btn_join')}
             </WFButton>
             <WFButton
               variant="outline"
               onClick={onVoiceClick}
-              className="px-6 py-2.5 text-sm font-bold border-2 border-[#172A4A] text-[#172A4A] hover:bg-[#172A4A] hover:text-white"
+              className="w-full sm:w-auto px-3 sm:px-6 py-2.5 text-xs sm:text-sm font-bold border-2 border-[#172A4A] text-[#172A4A] hover:bg-[#172A4A] hover:text-white text-center"
             >
               {t('btn_voice')}
             </WFButton>
@@ -125,8 +125,8 @@ export function Hero({
         </div>
 
         {/* Right Column: 4-Image Horizontal Auto-Scroller with clean IMAGE text */}
-        <div className="flex flex-col gap-4 md:col-span-5 items-center">
-          <div className="relative w-full rounded-2xl border-2 border-[#172A4A]/20 bg-white shadow-lg overflow-hidden flex flex-col group">
+        <div className="flex flex-col gap-4 md:col-span-5 items-center w-full max-w-full overflow-hidden">
+          <div className="relative w-full max-w-md md:max-w-none rounded-2xl border-2 border-[#172A4A]/20 bg-white shadow-lg overflow-hidden flex flex-col group">
             {/* Tricolor top accent strip */}
             <div className="h-1.5 w-full flex">
               <div className="h-full flex-1 bg-[#E6530C]" />

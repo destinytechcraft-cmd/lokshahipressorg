@@ -166,18 +166,18 @@ export function SectionShell({
 }) {
   const { lang } = useLanguage();
   return (
-    <section id={id} className={cn('border-b border-dashed border-[#172A4A]/20 py-12', className)}>
+    <section id={id} className={cn('border-b border-dashed border-[#172A4A]/20 py-10 sm:py-12', className)}>
       <div className="mx-auto w-full max-w-6xl px-4">
-        <div className="mb-8 flex items-center gap-3">
+        <div className="mb-6 sm:mb-8 flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3">
           {index ? (
-            <span className="flex h-8 min-w-8 items-center justify-center rounded-full bg-[#E30620] px-2 text-xs font-black text-white shadow-2xs">
+            <span className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-[#E30620] px-1.5 text-xs font-black text-white shadow-2xs">
               {index}
             </span>
           ) : null}
-          <h2 className="text-xl sm:text-2xl font-black tracking-tight text-[#172A4A]">
+          <h2 className="text-lg sm:text-2xl font-black tracking-tight text-[#172A4A] min-w-0 break-words">
             {title}
           </h2>
-          <span className="ml-auto text-[10px] font-bold uppercase tracking-[0.25em] text-[#172A4A]/50 bg-[#172A4A]/5 px-2.5 py-1 rounded border border-[#172A4A]/10">
+          <span className="ml-auto shrink-0 text-[10px] font-bold uppercase tracking-[0.25em] text-[#172A4A]/50 bg-[#172A4A]/5 px-2.5 py-1 rounded border border-[#172A4A]/10">
             {lang === 'mr' ? 'विभाग' : 'SECTION'}
           </span>
         </div>

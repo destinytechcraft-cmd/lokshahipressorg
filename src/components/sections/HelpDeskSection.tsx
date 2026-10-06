@@ -119,14 +119,14 @@ export function HelpDeskSection() {
                         : 'Your petition has been routed to the National Legal Advisory Board and the District Media Liaison.'}
                     </p>
 
-                    <div className="mt-5 inline-block rounded-xl border border-[#172A4A]/15 bg-white px-5 py-3 text-left shadow-xs">
-                      <div className="flex items-center justify-between gap-6 mb-2 border-b pb-2">
+                    <div className="mt-5 w-full max-w-md mx-auto rounded-xl border border-[#172A4A]/15 bg-white p-4 sm:p-5 text-left shadow-xs">
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-2 border-b pb-2">
                         <span className="text-[10px] font-bold text-[#172A4A]/50 uppercase">
                           {lang === 'mr' ? 'अधिकृत ट्रॅकिंग आयडी' : 'Official Tracking ID'}
                         </span>
                         <span className="text-sm font-mono font-black text-[#E30620]">{receiptData.ticketId}</span>
                       </div>
-                      <div className="text-xs text-[#172A4A] space-y-1">
+                      <div className="text-xs text-[#172A4A] space-y-1.5 break-words">
                         <div><strong>{lang === 'mr' ? 'पत्रकार:' : 'Journalist:'}</strong> {receiptData.name}</div>
                         <div><strong>{lang === 'mr' ? 'तक्रार प्रकार:' : 'Issue:'}</strong> {receiptData.issueType}</div>
                         <div><strong>{lang === 'mr' ? 'कार्यक्षेत्र / जिल्हा:' : 'Jurisdiction:'}</strong> {receiptData.district}</div>
@@ -135,7 +135,7 @@ export function HelpDeskSection() {
                     </div>
                   </div>
 
-                  <div className="flex justify-center gap-3">
+                  <div className="flex flex-wrap justify-center gap-3">
                     <button
                       type="button"
                       onClick={() => window.print()}
