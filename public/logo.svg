@@ -1,40 +1,23 @@
 <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <!-- Outer drop shadow for emblem -->
-    <filter id="emblemOuterGlow" x="-10%" y="-10%" width="125%" height="125%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="#000000" floodOpacity="0.25" />
-    </filter>
-    <!-- Card segment shadow -->
-    <filter id="sectorCardShadow" x="-10%" y="-10%" width="125%" height="125%">
-      <feDropShadow dx="0" dy="2.5" stdDeviation="3.5" floodColor="#000000" floodOpacity="0.32" />
-    </filter>
-    <!-- Center white disc shadow -->
-    <filter id="centerDiscShadow" x="-10%" y="-10%" width="125%" height="125%">
-      <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000000" floodOpacity="0.25" />
-    </filter>
-  </defs>
+  <!-- Outer Circular Emblem (Completely Transparent Outside the Red Ring) -->
+  <circle cx="250" cy="250" r="240" fill="#FFFFFF" />
+  <circle cx="250" cy="250" r="234" stroke="#D81A28" strokeWidth="12" fill="none" />
 
-  <!-- Outer White Disc & Bold Red Ring -->
-  <g filter="url(#emblemOuterGlow)">
-    <circle cx="250" cy="250" r="240" fill="#FFFFFF" />
-    <circle cx="250" cy="250" r="235" stroke="#D81A28" strokeWidth="12" fill="none" />
-  </g>
-
-  <!-- 4 Quadrant Segment Cards with Shadows -->
-  <g filter="url(#sectorCardShadow)">
+  <!-- 4 Quadrant Segment Cards -->
+  <g>
     <!-- Top White Segment with Red Border -->
     <path d="M 102.7 97.5 A 212 212 0 0 1 397.3 97.5 L 346.6 150.8 A 138 138 0 0 0 153.4 150.8 Z" fill="#FFFFFF" stroke="#D81A28" strokeWidth="3.5" />
     <!-- Left Saffron/Orange Segment -->
     <path d="M 97.5 397.3 A 212 212 0 0 1 97.5 102.7 L 150.8 153.4 A 138 138 0 0 0 150.8 346.6 Z" fill="#EA580C" stroke="#FFFFFF" strokeWidth="3.5" />
     <!-- Right Green Segment -->
-    <path d="M 402.5 102.7 A 212 212 0 0 1 402.5 397.3 L 349.2 346.6 A 138 138 0 0 0 349.2 153.4 Z" fill="#16A34A" stroke="#FFFFFF" strokeWidth="3.5" />
+    <path d="M 402.5 102.7 A 212 212 0 0 1 402.5 397.3 L 349.2 346.6 A 138 138 0 0 0 349.2 153.4 Z" fill="#1E8626" stroke="#FFFFFF" strokeWidth="3.5" />
     <!-- Bottom Blue Segment -->
-    <path d="M 397.3 402.5 A 212 212 0 0 1 102.7 402.5 L 153.4 349.2 A 138 138 0 0 0 346.6 349.2 Z" fill="#2563EB" stroke="#FFFFFF" strokeWidth="3.5" />
+    <path d="M 397.3 402.5 A 212 212 0 0 1 102.7 402.5 L 153.4 349.2 A 138 138 0 0 0 346.6 349.2 Z" fill="#2252A7" stroke="#FFFFFF" strokeWidth="3.5" />
   </g>
 
   <!-- Arched Typography matching official emblem -->
   <!-- Top: PATRAKAR in Red -->
-  <g fontFamily="Arial, 'Segoe UI', system-ui, sans-serif" fontWeight="900" fontSize="27" fill="#D81A28" textAnchor="middle" dominantBaseline="central">
+  <g fontFamily="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fontWeight="900" fontSize="27" fill="#D81A28" textAnchor="middle" dominantBaseline="central">
     <text x="159.9" y="100.0" transform="rotate(-31.0, 159.9, 100.0)">P</text>
     <text x="184.0" y="87.9" transform="rotate(-22.1, 184.0, 87.9)">A</text>
     <text x="209.8" y="79.7" transform="rotate(-13.3, 209.8, 79.7)">T</text>
@@ -46,7 +29,7 @@
   </g>
 
   <!-- Left: LOKSHAHI in White -->
-  <g fontFamily="Arial, 'Segoe UI', system-ui, sans-serif" fontWeight="900" fontSize="26" fill="#FFFFFF" textAnchor="middle" dominantBaseline="central">
+  <g fontFamily="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fontWeight="900" fontSize="26" fill="#FFFFFF" textAnchor="middle" dominantBaseline="central">
     <text x="101.6" y="342.7" transform="rotate(58.0, 101.6, 342.7)">L</text>
     <text x="88.7" y="318.0" transform="rotate(67.1, 88.7, 318.0)">O</text>
     <text x="80.0" y="291.5" transform="rotate(76.3, 80.0, 291.5)">K</text>
@@ -58,7 +41,7 @@
   </g>
 
   <!-- Right: MAHASANGH in White -->
-  <g fontFamily="Arial, 'Segoe UI', system-ui, sans-serif" fontWeight="900" fontSize="24" fill="#FFFFFF" textAnchor="middle" dominantBaseline="central">
+  <g fontFamily="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fontWeight="900" fontSize="24" fill="#FFFFFF" textAnchor="middle" dominantBaseline="central">
     <text x="396.8" y="154.7" transform="rotate(-123.0, 396.8, 154.7)">M</text>
     <text x="408.9" y="176.7" transform="rotate(-114.8, 408.9, 176.7)">A</text>
     <text x="417.8" y="200.3" transform="rotate(-106.5, 417.8, 200.3)">H</text>
@@ -71,7 +54,7 @@
   </g>
 
   <!-- Bottom: BHARAT in White -->
-  <g fontFamily="Arial, 'Segoe UI', system-ui, sans-serif" fontWeight="900" fontSize="29" fill="#FFFFFF" textAnchor="middle" dominantBaseline="central">
+  <g fontFamily="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fontWeight="900" fontSize="29" fill="#FFFFFF" textAnchor="middle" dominantBaseline="central">
     <text x="178.8" y="409.9" transform="rotate(24.0, 178.8, 409.9)">B</text>
     <text x="206.5" y="419.5" transform="rotate(14.4, 206.5, 419.5)">H</text>
     <text x="235.4" y="424.4" transform="rotate(4.8, 235.4, 424.4)">A</text>
@@ -80,13 +63,11 @@
     <text x="321.2" y="409.9" transform="rotate(-24.0, 321.2, 409.9)">T</text>
   </g>
 
-  <!-- Center White Disc with Shadow -->
-  <g filter="url(#centerDiscShadow)">
-    <circle cx="250" cy="250" r="132" fill="#FFFFFF" />
-    <!-- Tricolor Arc at the top of Center Disc -->
-    <path d="M 172 250 A 122 122 0 0 1 247 128" stroke="#EA580C" strokeWidth="6" strokeLinecap="round" fill="none" />
-    <path d="M 253 128 A 122 122 0 0 1 328 250" stroke="#16A34A" strokeWidth="6" strokeLinecap="round" fill="none" />
-  </g>
+  <!-- Center White Disc -->
+  <circle cx="250" cy="250" r="132" fill="#FFFFFF" />
+  <!-- Tricolor Arc at the top of Center Disc -->
+  <path d="M 172 250 A 122 122 0 0 1 247 128" stroke="#EA580C" strokeWidth="6" strokeLinecap="round" fill="none" />
+  <path d="M 253 128 A 122 122 0 0 1 328 250" stroke="#1E8626" strokeWidth="6" strokeLinecap="round" fill="none" />
 
   <!-- Central Emblem: Microphone + Clenched Fist + Pen Nib -->
   <g transform="translate(250, 250)">
@@ -102,7 +83,7 @@
       <rect x="-18" y="29" width="36" height="7" rx="2" fill="#D81A28" />
       <!-- Microphone Station Box (Flag) with LPMI -->
       <polygon points="-25,36 25,36 20,66 -20,66" fill="#D81A28" stroke="#18181A" strokeWidth="1.8" />
-      <text x="0" y="55" fill="#FFFFFF" fontSize="13" fontWeight="900" letterSpacing="1" textAnchor="middle" fontFamily="Arial, -apple-system, sans-serif">LPMI</text>
+      <text x="0" y="55" fill="#FFFFFF" fontSize="13" fontWeight="900" letterSpacing="1" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif">LPMI</text>
       <!-- Mic Handle Going Through Fist -->
       <rect x="-6" y="66" width="12" height="72" rx="3" fill="#18181A" />
     </g>
@@ -132,12 +113,9 @@
     </g>
 
     <!-- 3. The Fountain Pen Nib (Extending Down from the Wrist) -->
-    <!-- Nib Shoulders and Tapering Point -->
     <path d="M -18 46 L -26 66 L 0 110 L 26 66 L 18 46 Z" fill="#D81A28" stroke="#C0101E" strokeWidth="1.5" />
-    <!-- Nib Side Bevel Highlights -->
     <path d="M -22 66 L -2 104" stroke="#FFFFFF" strokeWidth="1.8" opacity="0.65" strokeLinecap="round" />
     <path d="M 22 66 L 2 104" stroke="#FFFFFF" strokeWidth="1.8" opacity="0.65" strokeLinecap="round" />
-    <!-- Breather Hole and Ink Slit -->
     <circle cx="0" cy="78" r="4.5" fill="#18181A" />
     <line x1="0" y1="78" x2="0" y2="110" stroke="#18181A" strokeWidth="3" strokeLinecap="round" />
     <circle cx="0" cy="110" r="3" fill="#18181A" />

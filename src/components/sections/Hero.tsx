@@ -144,11 +144,13 @@ export function Hero({
                   <div key={slide.id} className="relative h-full w-full shrink-0">
                     {slide.imageSrc ? (
                       /* Real Image (when user adds imageSrc) */
-                      <img
-                        src={slide.imageSrc}
-                        alt={slide.text}
-                        className="h-full w-full object-cover"
-                      />
+                      <div className="h-full w-full bg-white flex items-center justify-center p-6">
+                        <img
+                          src={slide.imageSrc}
+                          alt={slide.text}
+                          className="h-full w-full object-contain drop-shadow-md"
+                        />
+                      </div>
                     ) : (
                       /* Clean Wireframe Placeholder with only IMG text */
                       <div className="relative flex h-full w-full items-center justify-center p-6 text-center select-none bg-[#F7F3EC]">

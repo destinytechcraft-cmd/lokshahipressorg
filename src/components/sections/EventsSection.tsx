@@ -36,20 +36,8 @@ export function EventsSection() {
                   {lang === 'mr' ? event.titleMr : event.titleEn}
                 </h4>
 
-                <div className="space-y-2 text-xs text-neutral-600 mb-4 bg-neutral-50 p-3 rounded-md border border-neutral-200">
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm">📍</span>
-                    <span className="font-semibold text-neutral-800">{lang === 'mr' ? event.placeMr : event.placeEn}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm">📅</span>
-                    <span className="font-semibold text-neutral-800">{lang === 'mr' ? event.dateMr : event.dateEn}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm">👥</span>
-                    <span>{lang === 'mr' ? event.organizerMr : event.organizerEn}</span>
-                  </div>
-                </div>
+                {/* Empty layout box (content removed as requested) */}
+                <div className="mb-4 min-h-[80px] bg-neutral-50/70 rounded-md border border-neutral-200" />
 
                 <div className="text-xs text-neutral-700 leading-relaxed mb-4">
                   <span className="font-bold text-neutral-800 block mb-1">📝 {lang === 'mr' ? 'कार्यक्रमाची माहिती :' : 'Program Details :'}</span>

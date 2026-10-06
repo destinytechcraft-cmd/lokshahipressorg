@@ -134,7 +134,7 @@ export function Header({
           onClick={() => handleNavClick('/')}
           className="flex min-w-0 items-center gap-2.5 text-left cursor-pointer group"
         >
-          <Logo size={44} className="h-10 w-10 sm:h-11 sm:w-11 shrink-0 group-hover:scale-105 transition-transform drop-shadow-xs" />
+          <Logo size={52} className="h-11 w-11 sm:h-12 sm:w-12 shrink-0 group-hover:scale-105 transition-transform drop-shadow-xs" />
           <div className="min-w-0">
             <div className="truncate text-base sm:text-lg font-black tracking-tight text-[#172A4A] group-hover:text-[#E30620] transition-colors">
               {t('brand')}
