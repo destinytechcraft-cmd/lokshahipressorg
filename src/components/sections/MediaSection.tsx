@@ -5,45 +5,45 @@ import { SectionShell, WFCard, WFImage } from '../ui/WireframePrimitives';
 const mediaSectionsData = [
   {
     key: 'releases',
-    titleMr: 'प्रेस रिलीज (Press Releases)',
+    titleMr: 'प्रेस प्रसिद्धीपत्रके',
     titleEn: 'Press Releases',
     descMr: 'महासंघाच्या अधिकृत पत्रकार परिषदा, निवेदने व प्रसिद्धीपत्रके.',
-    descEn: 'Official press declarations, press conferences, media briefings and memorandums.',
+    descEn: 'Official press conferences, representations and press releases of the federation.',
   },
   {
     key: 'news',
-    titleMr: 'बातम्या व अपडेट्स (News & Updates)',
+    titleMr: 'बातम्या व अपडेट्स',
     titleEn: 'News & Updates',
-    descMr: 'महासंघाच्या विविध उपक्रमांची आणि कार्याची अद्ययावत माहिती.',
-    descEn: 'Latest news, organizational achievements, and district-level activities.',
+    descMr: 'महासंघाच्या विविध उपक्रमांची आणि कार्याची माहिती.',
+    descEn: 'Information regarding various initiatives and activities of the federation.',
   },
   {
     key: 'interviews',
-    titleMr: 'मुलाखती व लेख (Interviews & Articles)',
+    titleMr: 'मुलाखती व लेख',
     titleEn: 'Interviews & Articles',
-    descMr: 'पदाधिकारी, पत्रकार आणि सामाजिक क्षेत्रातील मान्यवरांच्या मुलाखती व विचारप्रवर्तक लेख.',
-    descEn: 'Interviews with veteran journalists, thought leadership columns, and editorial essays.',
+    descMr: 'पदाधिकारी, पत्रकार आणि सामाजिक क्षेत्रातील व्यक्तींच्या मुलाखती व लेख.',
+    descEn: 'Interviews and articles of office bearers, journalists, and personalities from social sectors.',
   },
   {
     key: 'speeches',
-    titleMr: 'भाषणे व विचार (Speeches)',
-    titleEn: 'Speeches & Keynotes',
-    descMr: 'महासंघाच्या प्रमुख पदाधिकाऱ्यांची मार्गदर्शक भाषणे व विचार.',
-    descEn: 'Addresses by national office-bearers on freedom of expression and press reforms.',
+    titleMr: 'भाषणे व विचार',
+    titleEn: 'Speeches & Addresses',
+    descMr: 'महासंघाच्या प्रमुख पदाधिकाऱ्यांची भाषणे व विचार.',
+    descEn: 'Speeches and thoughts of key office bearers of the federation.',
   },
   {
     key: 'photos',
-    titleMr: 'फोटो गॅलरी (Photo Gallery)',
+    titleMr: 'फोटो गॅलरी',
     titleEn: 'Photo Gallery',
-    descMr: 'महासंघाच्या राज्य व राष्ट्रीय कार्यक्रमांचे अधिकृत छायाचित्र संग्रह.',
-    descEn: 'High-resolution photo archives of conventions, rallies, and felicitation events.',
+    descMr: 'कार्यक्रमांचे छायाचित्र संग्रह.',
+    descEn: 'Photo collection of events and programs.',
   },
   {
     key: 'videos',
-    titleMr: 'व्हिडिओ गॅलरी (Video Gallery)',
+    titleMr: 'व्हिडिओ गॅलरी',
     titleEn: 'Video Gallery',
-    descMr: 'महासंघाच्या विविध उपक्रमांचे व्हिडिओ कव्हरेज व डॉक्युमेंटरी.',
-    descEn: 'Live broadcasts, convention recordings, interviews, and video coverage.',
+    descMr: 'महासंघाच्या कार्यक्रमांचे व्हिडिओ.',
+    descEn: 'Videos of the federation’s programs.',
   },
 ];
 
@@ -65,8 +65,8 @@ export function MediaSection() {
                 onClick={() => setActiveFilter(idx)}
                 className={`rounded-full border-2 px-3.5 py-1.5 text-xs font-semibold transition-colors cursor-pointer ${
                   isActive
-                    ? 'border-neutral-800 bg-neutral-800 text-white shadow-xs'
-                    : 'border-neutral-300 bg-white text-neutral-700 hover:border-neutral-500'
+                    ? 'border-[#172A4A] bg-[#172A4A] text-white shadow-xs'
+                    : 'border-neutral-300 bg-white text-neutral-700 hover:border-[#172A4A]'
                 }`}
               >
                 {lang === 'mr' ? cat.titleMr : cat.titleEn}
@@ -80,18 +80,18 @@ export function MediaSection() {
           <h4 className="text-sm font-bold text-neutral-900 mb-1">
             {lang === 'mr' ? mediaSectionsData[activeFilter].titleMr : mediaSectionsData[activeFilter].titleEn}
           </h4>
-          <p className="text-xs text-neutral-600">
+          <p className="text-xs sm:text-sm text-neutral-700">
             {lang === 'mr' ? mediaSectionsData[activeFilter].descMr : mediaSectionsData[activeFilter].descEn}
           </p>
         </div>
 
-        {/* 6 Media Cards Grid with real labels & info */}
+        {/* 6 Media Cards Grid */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {mediaSectionsData.map((item, idx) => (
             <WFCard key={idx} className="p-4 hover:border-neutral-500 transition-colors flex flex-col justify-between">
               <div>
                 <WFImage
-                  label={lang === 'mr' ? item.titleMr.split(' ')[0] : item.titleEn}
+                  label={lang === 'mr' ? item.titleMr : item.titleEn}
                   ratio="aspect-video"
                   className="mb-3"
                 />
@@ -101,11 +101,6 @@ export function MediaSection() {
                 <p className="text-xs text-neutral-600 leading-relaxed">
                   {lang === 'mr' ? item.descMr : item.descEn}
                 </p>
-              </div>
-
-              <div className="mt-4 pt-3 border-t border-neutral-100 flex items-center justify-between text-[11px] text-neutral-400 font-semibold">
-                <span>LOKSHAHI PRESS</span>
-                <span>{lang === 'mr' ? 'तपशील पहा →' : 'View Details →'}</span>
               </div>
             </WFCard>
           ))}

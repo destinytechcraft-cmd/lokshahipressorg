@@ -36,12 +36,18 @@ export function WFButton({
   className,
   onClick,
   type = 'button',
+  href,
+  target,
+  rel,
 }: {
   children: React.ReactNode;
   variant?: 'solid' | 'outline' | 'navy' | 'green' | 'saffron' | 'blue';
   className?: string;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
+  href?: string;
+  target?: string;
+  rel?: string;
 }) {
   const variantStyles = {
     solid: 'bg-[#E30620] hover:bg-[#c7051b] text-white shadow-sm border border-[#E30620]',
@@ -52,15 +58,31 @@ export function WFButton({
     outline: 'border-2 border-[#172A4A] hover:bg-[#172A4A] hover:text-white text-[#172A4A]',
   };
 
+  const commonClasses = cn(
+    'inline-flex items-center justify-center rounded-md px-4 py-2 text-xs sm:text-sm font-bold tracking-wide transition-all duration-150 cursor-pointer select-none active:scale-[0.98]',
+    variantStyles[variant] || variantStyles.solid,
+    className
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target={target || '_blank'}
+        rel={rel || 'noopener noreferrer'}
+        onClick={onClick}
+        className={commonClasses}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
     <button
       type={type}
       onClick={onClick}
-      className={cn(
-        'inline-flex items-center justify-center rounded-md px-4 py-2 text-xs sm:text-sm font-bold tracking-wide transition-all duration-150 cursor-pointer select-none active:scale-[0.98]',
-        variantStyles[variant] || variantStyles.solid,
-        className
-      )}
+      className={commonClasses}
     >
       {children}
     </button>
@@ -101,20 +123,20 @@ export function WFImage({
   return (
     <div
       className={cn(
-        'relative flex items-center justify-center overflow-hidden rounded-xl border border-[#172A4A]/20 bg-[#F7F3EC] select-none shadow-2xs',
+        'relative flex items-center justify-center overflow-hidden rounded-xl border-2 border-[#172A4A]/25 bg-white select-none shadow-xs',
         ratio,
         className
       )}
     >
       <svg
-        className="absolute inset-0 h-full w-full text-[#172A4A]/10 pointer-events-none"
+        className="absolute inset-0 h-full w-full text-[#172A4A]/15 pointer-events-none"
         preserveAspectRatio="none"
         viewBox="0 0 100 100"
       >
-        <line x1="0" y1="0" x2="100" y2="100" stroke="currentColor" strokeWidth="0.75" />
-        <line x1="100" y1="0" x2="0" y2="100" stroke="currentColor" strokeWidth="0.75" />
+        <line x1="0" y1="0" x2="100" y2="100" stroke="currentColor" strokeWidth="1" />
+        <line x1="100" y1="0" x2="0" y2="100" stroke="currentColor" strokeWidth="1" />
       </svg>
-      <span className="relative z-10 rounded-full bg-white/95 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-[#172A4A] shadow-xs border border-[#172A4A]/15 backdrop-blur-xs">
+      <span className="relative z-10 rounded-full bg-[#172A4A] px-4 py-1.5 text-[11px] font-black uppercase tracking-widest text-white shadow-sm border border-white/20">
         {label}
       </span>
     </div>
@@ -145,7 +167,7 @@ export function WFInput({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="h-10 w-full rounded-lg border border-[#172A4A]/25 bg-[#F7F3EC]/50 px-3.5 text-xs text-[#172A4A] placeholder-[#172A4A]/40 focus:border-[#E30620] focus:bg-white focus:outline-none transition-colors"
+        className="h-10 sm:h-10 w-full rounded-lg border border-[#172A4A]/25 bg-[#F7F3EC]/50 px-3.5 text-sm sm:text-xs text-[#172A4A] placeholder-[#172A4A]/40 focus:border-[#E30620] focus:bg-white focus:outline-none transition-colors"
       />
     </label>
   );
@@ -168,16 +190,18 @@ export function SectionShell({
   return (
     <section id={id} className={cn('border-b border-dashed border-[#172A4A]/20 py-10 sm:py-12', className)}>
       <div className="mx-auto w-full max-w-6xl px-4">
-        <div className="mb-6 sm:mb-8 flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3">
-          {index ? (
-            <span className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-[#E30620] px-1.5 text-xs font-black text-white shadow-2xs">
-              {index}
-            </span>
-          ) : null}
-          <h2 className="text-lg sm:text-2xl font-black tracking-tight text-[#172A4A] min-w-0 break-words">
-            {title}
-          </h2>
-          <span className="ml-auto shrink-0 text-[10px] font-bold uppercase tracking-[0.25em] text-[#172A4A]/50 bg-[#172A4A]/5 px-2.5 py-1 rounded border border-[#172A4A]/10">
+        <div className="mb-6 sm:mb-8 flex items-center justify-between gap-2 sm:gap-3 flex-wrap sm:flex-nowrap">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+            {index ? (
+              <span className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-[#E30620] px-1.5 text-xs font-black text-white shadow-2xs">
+                {index}
+              </span>
+            ) : null}
+            <h2 className="text-base sm:text-2xl font-black tracking-tight text-[#172A4A] min-w-0 break-words leading-tight">
+              {title}
+            </h2>
+          </div>
+          <span className="shrink-0 text-[10px] font-bold uppercase tracking-[0.25em] text-[#172A4A]/50 bg-[#172A4A]/5 px-2.5 py-1 rounded border border-[#172A4A]/10">
             {lang === 'mr' ? 'विभाग' : 'SECTION'}
           </span>
         </div>

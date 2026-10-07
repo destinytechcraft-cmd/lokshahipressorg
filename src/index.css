@@ -7,6 +7,8 @@
   --color-brand-green: #287A18;
   --color-brand-saffron: #E6530C;
   --color-brand-blue: #2855A5;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-mukta: 'Mukta', 'Montserrat', sans-serif;
 }
 
 @layer base {
@@ -17,7 +19,6 @@
     --sec-green: #287A18;
     --sec-saffron: #E6530C;
     --sec-blue: #2855A5;
-    --font-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 
   html {
@@ -27,19 +28,38 @@
     -moz-osx-font-smoothing: grayscale;
     background-color: #F7F3EC;
     color: #172A4A;
-    overflow-x: hidden;
+    overflow-x: clip;
     max-width: 100vw;
   }
 
-  body {
-    font-family: 'Inter', 'Noto Sans Devanagari', var(--font-fallback);
+  /* Default / English: Montserrat with normal = semi bold (600), heading = bold (700/800) */
+  body, html[lang="en"] body, .lang-en body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     background-color: #F7F3EC;
     color: #172A4A;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow-x: clip;
     max-width: 100vw;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+
+  /* Marathi: Mukta with normal = semi bold (600), heading = bold (700/800) */
+  html[lang="mr"] body, .lang-mr body {
+    font-family: 'Mukta', 'Montserrat', sans-serif;
+    font-weight: 600;
+  }
+
+  html[lang="mr"] h1, html[lang="mr"] h2, html[lang="mr"] h3, html[lang="mr"] h4, html[lang="mr"] h5, html[lang="mr"] h6,
+  .lang-mr h1, .lang-mr h2, .lang-mr h3, .lang-mr h4, .lang-mr h5, .lang-mr h6 {
+    font-family: 'Mukta', 'Montserrat', sans-serif;
+    font-weight: 700;
   }
 
   ::selection {

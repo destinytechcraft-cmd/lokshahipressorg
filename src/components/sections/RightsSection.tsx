@@ -81,34 +81,29 @@ export function RightsSection({ onHelpdeskClick }: { onHelpdeskClick?: () => voi
 
         {/* Right Column: CTA Box from PDF Page 9 */}
         <div className="lg:col-span-5 space-y-4">
-          <WFCard className="border-2 border-neutral-400 bg-neutral-900 text-white p-6 shadow-md text-center flex flex-col items-center">
-            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl border border-white/20">
+          <div className="rounded-2xl border-2 border-[#172A4A]/20 bg-white p-6 sm:p-8 shadow-xs text-center flex flex-col items-center">
+            <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[#172A4A]/5 text-2xl border border-[#172A4A]/15 shadow-2xs">
               ⚖️
             </div>
-            <h4 className="text-base font-bold text-white mb-2">
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#E30620] block mb-1">
+              CTA
+            </span>
+            <h4 className="text-base sm:text-lg font-black text-[#172A4A] mb-2">
               {lang === 'mr' ? 'तातडीची मदत व कायदेशीर पाठबळ' : 'Emergency Assistance & Legal Aid'}
             </h4>
-            <blockquote className="text-xs sm:text-sm text-neutral-300 italic mb-5 leading-relaxed">
+            <blockquote className="text-xs sm:text-sm font-bold text-[#172A4A] italic mb-6 leading-relaxed max-w-sm">
               {lang === 'mr'
                 ? '“तुमच्या पत्रकारिता क्षेत्रातील प्रश्नासाठी आमच्याशी संपर्क साधा.”'
-                : '“Reach out to us for any professional grievances or threats in your journalistic work.”'}
+                : '“Contact us for issues related to your journalism field.”'}
             </blockquote>
-            <WFButton
-              variant="solid"
+            <button
+              type="button"
               onClick={onHelpdeskClick}
-              className="bg-white text-neutral-900 hover:bg-neutral-100 font-bold px-6 py-2.5 text-xs sm:text-sm shadow-sm"
+              className="w-full sm:w-auto rounded-xl bg-[#E30620] hover:bg-[#c7051b] text-white px-7 py-3 text-xs sm:text-sm font-black uppercase tracking-wider shadow-md hover:shadow-lg transition-all cursor-pointer"
             >
-              {t('btn_helpdesk')}
-            </WFButton>
-          </WFCard>
-
-          <WFCard label={lang === 'mr' ? '२४/७ हेल्पलाइन व विधी कक्ष' : '24/7 Helpline & Legal Cell'} className="bg-neutral-50">
-            <p className="text-xs text-neutral-600 leading-relaxed">
-              {lang === 'mr'
-                ? 'स्थानिक पोलिस स्टेशन, प्रशासन अथवा संस्थेकडून पत्रकारितेवर गदा आल्यास आमची विधी सल्लागार समिती विनामूल्य मार्गदर्शन व मदत करते.'
-                : 'Our legal cell provides immediate counseling, documentation assistance, and public representations whenever journalists face harassment.'}
-            </p>
-          </WFCard>
+              JOURNALIST HELP DESK
+            </button>
+          </div>
         </div>
       </div>
     </SectionShell>

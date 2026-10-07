@@ -121,7 +121,7 @@ export function Header({
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[#172A4A]/20 bg-white/95 backdrop-blur-md shadow-2xs">
+    <header className="sticky top-0 z-50 border-b border-[#172A4A]/20 bg-white/95 backdrop-blur-md shadow-sm">
       {/* Tricolor top indicator band */}
       <div className="h-1 w-full flex">
         <div className="h-full flex-1 bg-[#E6530C]" />
@@ -154,7 +154,7 @@ export function Header({
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-nav"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#172A4A]/30 bg-white text-[#172A4A] md:hidden cursor-pointer hover:bg-[#F7F3EC] transition-colors"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#172A4A]/30 bg-white text-[#172A4A] md:hidden cursor-pointer hover:bg-[#F7F3EC] active:bg-[#172A4A]/10 transition-colors"
           >
             {mobileMenuOpen ? (
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -224,6 +224,13 @@ export function Header({
           </ul>
         </nav>
       )}
+
+      {/* Tricolor bottom indicator band - consistently visible across entire page scroll */}
+      <div className="h-1 sm:h-1.5 w-full flex shrink-0 shadow-xs">
+        <div className="h-full flex-1 bg-[#E6530C]" />
+        <div className="h-full flex-1 bg-white border-y border-black/5" />
+        <div className="h-full flex-1 bg-[#287A18]" />
+      </div>
     </header>
   );
 }

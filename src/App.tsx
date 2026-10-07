@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { PageShell } from './components/PageShell';
 import { PageHero } from './components/ui/WireframePrimitives';
-import { Hero } from './components/sections/Hero';
-import { ValuesTypographySection } from './components/sections/ValuesTypographySection';
+import { Hero, HeroIntroSection } from './components/sections/Hero';
 import { MediaCoverage } from './components/sections/MediaCoverage';
 import { StatsSection } from './components/sections/StatsSection';
 import { AboutSection } from './components/sections/AboutSection';
@@ -172,10 +171,10 @@ export default function App() {
               onJoinClick={() => setMembershipModalOpen(true)}
               onVoiceClick={() => setIssueModalOpen(true)}
             />
-            <ValuesTypographySection />
+            <HeroIntroSection />
             <MediaCoverage />
-            <StatsSection />
             <AboutSection />
+            <OrganisationSection />
             <RightsSection onHelpdeskClick={() => navigate('/help-desk')} />
             <SocialSection />
             <OrgNetworkSection />

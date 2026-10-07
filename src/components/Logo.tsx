@@ -5,14 +5,18 @@ interface LogoProps {
   size?: number;
 }
 
-export function Logo({ className = '', size = 48 }: LogoProps) {
-  const hasDimensions = className.includes('w-') && className.includes('h-');
-
+/**
+ * Empty circle layout for logo across the website as requested.
+ * The user will add the actual logo graphic later.
+ */
+export function Logo({ className = 'h-10 w-10', size }: LogoProps) {
   return (
     <div
-      style={hasDimensions ? undefined : { width: size, height: size }}
-      className={`shrink-0 rounded-full border-2 border-dashed border-[#172A4A]/35 bg-white/70 shadow-2xs ${className}`}
-      aria-label="Logo placeholder"
+      style={size ? { width: size, height: size } : undefined}
+      className={`rounded-full border-2 border-dashed border-current/35 bg-current/5 shrink-0 transition-all ${className}`}
+      aria-label="Logo placeholder (empty circle layout)"
+      role="img"
     />
   );
 }
+

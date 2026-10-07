@@ -6,11 +6,12 @@ export interface CommitteeItem {
   categoryEn: string;
 }
 
+// All 78 Committees exactly as enumerated in PDF Pages 7, 8, 9
 export const all78Committees: CommitteeItem[] = [
   { id: 1, nameMr: "मंत्रालय कामकाज समिती", nameEn: "Ministry Affairs Committee", categoryMr: "प्रशासन", categoryEn: "Administration" },
   { id: 2, nameMr: "पोलीस विकास समिती", nameEn: "Police Welfare Committee", categoryMr: "कायदा व सुरक्षा", categoryEn: "Law & Security" },
   { id: 3, nameMr: "महिला अन्याय अत्याचार निर्मूलन समिती", nameEn: "Women Anti-Atrocities & Justice Committee", categoryMr: "महिला व बालक", categoryEn: "Women & Child" },
-  { id: 4, nameMr: "वृत्तपत्र एजन्सी (न्यूज पेपर एजन्सी) विकास समिती", nameEn: "Newspaper Agency Development Committee", categoryMr: "मीडिया", categoryEn: "Media" },
+  { id: 4, nameMr: "न्यूज पेपर एजन्सी विकास समिती", nameEn: "Newspaper Agency Development Committee", categoryMr: "मीडिया", categoryEn: "Media" },
   { id: 5, nameMr: "ग्राहक संरक्षण विकास समिती", nameEn: "Consumer Protection Committee", categoryMr: "जनहित", categoryEn: "Public Interest" },
   { id: 6, nameMr: "आरोग्य कर्मचारी विकास समिती", nameEn: "Healthcare Workers Committee", categoryMr: "आरोग्य", categoryEn: "Health" },
   { id: 7, nameMr: "क्रीडा विकास समिती", nameEn: "Sports Development Committee", categoryMr: "क्रीडा", categoryEn: "Sports" },
@@ -43,7 +44,7 @@ export const all78Committees: CommitteeItem[] = [
   { id: 34, nameMr: "उद्योग विकास समिती", nameEn: "Industries & MSME Committee", categoryMr: "व्यापार", categoryEn: "Commerce" },
   { id: 35, nameMr: "जिल्हा कोर कमिटी", nameEn: "District Core Committee", categoryMr: "संघटना", categoryEn: "Organisation" },
   { id: 36, nameMr: "विभागीय कार्यकारणी विकास समिती", nameEn: "Divisional Executive Committee", categoryMr: "संघटना", categoryEn: "Organisation" },
-  { id: 37, nameMr: "तंटामुक्ती विकास समिती", nameEn: "Dispute-Free Village & Harmony Committee", categoryMr: "कायदा व सुरक्षा", categoryEn: "Law & Security" },
+  { id: 37, nameMr: "तंटा मुक्ती विकास समिती", nameEn: "Dispute-Free Village & Harmony Committee", categoryMr: "कायदा व सुरक्षा", categoryEn: "Law & Security" },
   { id: 38, nameMr: "समाजकल्याण विकास समिती", nameEn: "Social Welfare Committee", categoryMr: "सामाजिक", categoryEn: "Social" },
   { id: 39, nameMr: "सरपंच, ग्रामपंचायत विकास समिती", nameEn: "Sarpanch & Gram Panchayat Committee", categoryMr: "स्थानिक स्वराज्य", categoryEn: "Local Governance" },
   { id: 40, nameMr: "जिल्हा परिषद विकास समिती", nameEn: "Zilla Parishad Affairs Committee", categoryMr: "स्थानिक स्वराज्य", categoryEn: "Local Governance" },
@@ -87,196 +88,201 @@ export const all78Committees: CommitteeItem[] = [
   { id: 78, nameMr: "कायदा व सुव्यवस्था विकास समिती", nameEn: "Law & Order Assistance Committee", categoryMr: "कायदा व सुरक्षा", categoryEn: "Law & Security" }
 ];
 
+// Leadership designations strictly as per PDF Pages 15 & 16:
+// Photo + Name + Designation + State + Short Profile
 export const leadershipMembers = [
   {
     roleMr: "राष्ट्रीय अध्यक्ष",
     roleEn: "National President",
-    nameMr: "मा. राष्ट्रीय अध्यक्ष",
-    nameEn: "Hon. National President",
-    stateMr: "नवी दिल्ली / महाराष्ट्र",
-    stateEn: "New Delhi / Maharashtra",
-    profileMr: "गेल्या ११ वर्षांपासून पत्रकारांच्या न्याय, हक्क व संरक्षणासाठी देशव्यापी नेतृत्व. निर्भय पत्रकारितेचे पुरस्कर्ते.",
-    profileEn: "Leading pan-India advocacy for journalist safety, legal rights, and democratic accountability for over 11 years."
+    nameMr: "नाव",
+    nameEn: "Name",
+    stateMr: "[राज्य]",
+    stateEn: "[State]",
+    profileMr: "[Short Profile]",
+    profileEn: "[Short Profile]"
   },
   {
     roleMr: "राष्ट्रीय कार्याध्यक्ष",
     roleEn: "National Working President",
-    nameMr: "मा. राष्ट्रीय कार्याध्यक्ष",
-    nameEn: "Hon. National Working President",
-    stateMr: "महाराष्ट्र",
-    stateEn: "Maharashtra",
-    profileMr: "संघटनात्मक बांधणी, विविध राज्यांतील संपर्क आणि राष्ट्रीय समन्वयाची प्रमुख जबाबदारी.",
-    profileEn: "Overseeing nationwide organisational expansion, state branch coordination, and committee operations."
+    nameMr: "नाव",
+    nameEn: "Name",
+    stateMr: "[राज्य]",
+    stateEn: "[State]",
+    profileMr: "[Short Profile]",
+    profileEn: "[Short Profile]"
   },
   {
     roleMr: "राष्ट्रीय उपाध्यक्ष",
     roleEn: "National Vice President",
-    nameMr: "मा. राष्ट्रीय उपाध्यक्ष",
-    nameEn: "Hon. National Vice President",
-    stateMr: "नवी दिल्ली",
-    stateEn: "New Delhi",
-    profileMr: "राष्ट्रीय स्तरावरील धोरण आखणी, केंद्र शासन व मीडिया संस्थांशी संपर्क.",
-    profileEn: "Liaising with central bodies, policy frameworks, and national press relations."
+    nameMr: "नाव",
+    nameEn: "Name",
+    stateMr: "[राज्य]",
+    stateEn: "[State]",
+    profileMr: "[Short Profile]",
+    profileEn: "[Short Profile]"
   },
   {
     roleMr: "राष्ट्रीय महामंत्री",
     roleEn: "National General Secretary",
-    nameMr: "मा. राष्ट्रीय महामंत्री",
-    nameEn: "Hon. National General Secretary",
-    stateMr: "महाराष्ट्र",
-    stateEn: "Maharashtra",
-    profileMr: "संघटना विस्तार, धोरणात्मक निर्णय आणि राज्य कार्यकारिणी समन्वय.",
-    profileEn: "Managing strategic outreach, state executive committee networks, and legal welfare."
+    nameMr: "नाव",
+    nameEn: "Name",
+    stateMr: "[राज्य]",
+    stateEn: "[State]",
+    profileMr: "[Short Profile]",
+    profileEn: "[Short Profile]"
   },
   {
     roleMr: "राष्ट्रीय महासचिव",
     roleEn: "National Secretary General",
-    nameMr: "मा. राष्ट्रीय महासचिव",
-    nameEn: "Hon. National Secretary General",
-    stateMr: "नवी दिल्ली",
-    stateEn: "New Delhi",
-    profileMr: "राष्ट्रीय दस्तऐवजीकरण, पत्रकार परिषद आयोजन आणि माध्यम संवाद.",
-    profileEn: "Handling national media communication, press conferences, and documentation."
+    nameMr: "नाव",
+    nameEn: "Name",
+    stateMr: "[राज्य]",
+    stateEn: "[State]",
+    profileMr: "[Short Profile]",
+    profileEn: "[Short Profile]"
   },
   {
     roleMr: "राष्ट्रीय संघटन मंत्री",
     roleEn: "National Organizing Secretary",
-    nameMr: "मा. राष्ट्रीय संघटन मंत्री",
-    nameEn: "Hon. National Organizing Secretary",
-    stateMr: "महाराष्ट्र",
-    stateEn: "Maharashtra",
-    profileMr: "जिल्हा व तालुका स्तरावरील समित्यांचे गठन आणि सदस्य नोंदणी अभियान.",
-    profileEn: "Supervising district & taluka committee formations and grassroots membership drives."
+    nameMr: "नाव",
+    nameEn: "Name",
+    stateMr: "[राज्य]",
+    stateEn: "[State]",
+    profileMr: "[Short Profile]",
+    profileEn: "[Short Profile]"
   },
   {
     roleMr: "महाराष्ट्र प्रदेशाध्यक्ष",
     roleEn: "Maharashtra State President",
-    nameMr: "मा. महाराष्ट्र प्रदेशाध्यक्ष",
-    nameEn: "Hon. Maharashtra State President",
-    stateMr: "महाराष्ट्र",
-    stateEn: "Maharashtra",
-    profileMr: "महाराष्ट्र राज्यातील सर्व ३६ जिल्ह्यांतील पत्रकारांचे संघटन व न्याय हक्कांचे रक्षण.",
-    profileEn: "Leading all 36 district branches across Maharashtra for journalists' welfare and rights."
+    nameMr: "नाव",
+    nameEn: "Name",
+    stateMr: "[राज्य]",
+    stateEn: "[State]",
+    profileMr: "[Short Profile]",
+    profileEn: "[Short Profile]"
   },
   {
     roleMr: "राज्य कार्याध्यक्ष",
     roleEn: "State Working President",
-    nameMr: "मा. राज्य कार्याध्यक्ष",
-    nameEn: "Hon. State Working President",
-    stateMr: "महाराष्ट्र",
-    stateEn: "Maharashtra",
-    profileMr: "राज्य पातळीवरील कार्यक्रम, अधिवेशने आणि स्थानिक पत्रकार प्रश्नांचे निवारण.",
-    profileEn: "Managing state conventions, training workshops, and immediate redressal of journalist issues."
+    nameMr: "नाव",
+    nameEn: "Name",
+    stateMr: "[राज्य]",
+    stateEn: "[State]",
+    profileMr: "[Short Profile]",
+    profileEn: "[Short Profile]"
   },
   {
     roleMr: "राज्य उपाध्यक्ष",
     roleEn: "State Vice President",
-    nameMr: "मा. राज्य उपाध्यक्ष",
-    nameEn: "Hon. State Vice President",
-    stateMr: "महाराष्ट्र",
-    stateEn: "Maharashtra",
-    profileMr: "विभागीय स्तरावरील कामकाज आणि सामाजिक बांधिलकी उपक्रमांचे संचलन.",
-    profileEn: "Guiding regional divisional committees and social welfare initiatives across the state."
+    nameMr: "नाव",
+    nameEn: "Name",
+    stateMr: "[राज्य]",
+    stateEn: "[State]",
+    profileMr: "[Short Profile]",
+    profileEn: "[Short Profile]"
   }
 ];
 
+// Future Roadmap 8 Phases strictly matching PDF Pages 11 & 12
 export const futureRoadmapPhases = [
   {
     phase: "PHASE 01",
     titleMr: "संघटन विस्तार",
     titleEn: "Organisational Expansion",
     descMr: "भारताच्या विविध राज्यांमध्ये महासंघाचे संघटनात्मक जाळे मजबूत करणे.",
-    descEn: "Strengthening the organisational grassroots network across multiple Indian states."
+    descEn: "Strengthening the organisational network across various states of India."
   },
   {
     phase: "PHASE 02",
     titleMr: "Journalist Help Desk",
     titleEn: "Journalist Help Desk",
     descMr: "पत्रकारांच्या प्रश्नांसाठी राष्ट्रीय पातळीवर संपर्क व मार्गदर्शन व्यवस्था विकसित करणे.",
-    descEn: "Developing a 24x7 national-level communication and legal guidance mechanism for journalists."
+    descEn: "Developing a national-level contact and guidance mechanism for journalists' issues."
   },
   {
     phase: "PHASE 03",
     titleMr: "प्रशिक्षण व कौशल्य विकास",
     titleEn: "Training & Skill Development",
-    descMr: "डिजिटल पत्रकारिता, सोशल मीडिया, तथ्य पडताळणी, सायबर सुरक्षा, कायदेशीर जागरूकता आणि आधुनिक पत्रकारितेसाठी प्रशिक्षण उपक्रम व पत्रकार कार्यशाळेचे आयोजन. सोबतच Meet the Press कार्यक्रम, पत्रकार सुरक्षा व हक्क संरक्षण अभियान, माध्यम संशोधन व अभ्यास प्रकल्प, मानवाधिकार जनजागृती उपक्रम, पर्यावरण संरक्षण मोहिमा, पत्रकारिता नैतिकता विषयक मार्गदर्शन, स्मरणिका, नियतकालिके आणि डिजिटल प्रकाशन, सामाजिक सेवा आणि जनहिताचे विशेष अभियान.",
-    descEn: "Workshops on digital journalism, fact-checking, cyber safety, legal literacy, Meet the Press sessions, media research projects, ethics guidelines, and souvenir publications."
+    descMr: "डिजिटल पत्रकारिता, सोशल मीडिया, तथ्य पडताळणी, सायबर सुरक्षा, कायदेशीर जागरूकता आणि आधुनिक पत्रकारितेसाठी प्रशिक्षण उपक्रम व पत्रकार कार्यशाळेचे आयोजन.सोबतच Meet the Press कार्यक्रम, पत्रकार सुरक्षा व हक्क संरक्षण अभियान, माध्यम संशोधन व अभ्यास प्रकल्प,मानवाधिकार जनजागृती उपक्रम,पर्यावरण संरक्षण मोहिमा,पत्रकारिता नैतिकता विषयक मार्गदर्शन,स्मरणिका, नियतकालिके आणि डिजिटल प्रकाशन,सामाजिक सेवा आणि जनहिताचे विशेष अभियान",
+    descEn: "Training programs and journalist workshops on digital journalism, social media, fact checking, cyber security, legal awareness, Meet the Press events, and public interest initiatives."
   },
   {
     phase: "PHASE 04",
     titleMr: "पत्रकार हक्क अभियान",
     titleEn: "Journalist Rights Campaign",
     descMr: "पत्रकारांच्या न्याय्य हक्क आणि प्रश्नांसाठी राष्ट्रीय स्तरावर जनजागृती व संघटनात्मक अभियान.",
-    descEn: "National awareness campaigns and advocacy drives for journalists' constitutional and labor rights."
+    descEn: "National awareness campaigns and advocacy drives for journalists' legitimate rights and issues."
   },
   {
     phase: "PHASE 05",
     titleMr: "सामाजिक जनहित अभियान",
     titleEn: "Public Welfare Initiative",
     descMr: "देशभरातील जनहिताचे प्रश्न संबंधित शासन-प्रशासनापर्यंत पोहोचवण्यासाठी सामाजिक उपक्रम.",
-    descEn: "Social outreach and representations to bring public interest issues before authorities."
+    descEn: "Social initiatives to bring public interest issues across the country to relevant government administrations."
   },
   {
     phase: "PHASE 06",
     titleMr: "Digital Journalist Network",
     titleEn: "Digital Journalist Network",
     descMr: "देशभरातील सदस्य पत्रकारांना जोडणारे डिजिटल नेटवर्क तयार करणे.",
-    descEn: "Creating an integrated digital portal connecting digital publishers, YouTubers, and independent reporters."
+    descEn: "Creating a digital network connecting member journalists across India."
   },
   {
     phase: "PHASE 07",
     titleMr: "National Media & Journalist Convention",
     titleEn: "National Media & Journalist Convention",
     descMr: "देशभरातील पत्रकारांना एका व्यासपीठावर आणण्यासाठी राष्ट्रीय स्तरावरील परिषद/अधिवेशन व देशव्यापी चर्चासत्रांचे आयोजन.",
-    descEn: "Hosting pan-India national journalism conferences, symposiums, and national awards."
+    descEn: "Organizing national-level conventions and nationwide symposiums to bring journalists together on one platform."
   },
   {
     phase: "PHASE 08",
     titleMr: "Research & Documentation",
     titleEn: "Research & Documentation",
     descMr: "पत्रकारांचे प्रश्न, पत्रकारितेतील बदल आणि सामाजिक प्रश्नांवर अभ्यास व दस्तऐवजीकरण.",
-    descEn: "Documenting media trends, challenges faced by local reporters, and publishing annual research papers."
+    descEn: "Study and documentation of journalists' issues, media evolution, and social questions."
   }
 ];
 
+// Event Cards specifications matching PDF Page 13:
+// प्रत्येक Event Card मध्ये: कार्यक्रमाचे नाव, 📍 ठिकाण, 📅 दिनांक, 👥 आयोजक / समिती, 📝 कार्यक्रमाची माहिती, 📷 फोटो, 🎥 व्हिडिओ
 export const sampleEvents = [
   {
     id: 1,
-    titleMr: "राष्ट्रीय पत्रकार महाअधिवेशन व सन्मान सोहळा",
-    titleEn: "National Journalism Convention & Awards",
-    placeMr: "यशवंतराव चव्हाण सेंटर, मुंबई",
-    placeEn: "Y.B. Chavan Centre, Mumbai",
-    dateMr: "१५ नोव्हेंबर २०२६",
-    dateEn: "November 15, 2026",
-    organizerMr: "राष्ट्रीय कार्यकारिणी व लोकशाही मुंबई समिती",
-    organizerEn: "National Executive & Lokshahi Mumbai Committee",
-    descMr: "देशभरातील प्रिंट, डिजिटल व टीव्ही पत्रकारांचे भव्य राष्ट्रीय अधिवेशन, शोधपत्रकारिता चर्चासत्र आणि ज्येष्ठ पत्रकारांचा राष्ट्रीय सन्मान.",
-    descEn: "Grand national convention of print, digital and broadcast journalists focusing on investigative journalism ethics and national felicitations."
+    titleMr: "कार्यक्रमाचे नाव",
+    titleEn: "Event Name",
+    placeMr: "ठिकाण",
+    placeEn: "Location",
+    dateMr: "दिनांक",
+    dateEn: "Date",
+    organizerMr: "आयोजक / समिती",
+    organizerEn: "Organizer / Committee",
+    descMr: "कार्यक्रमाची माहिती",
+    descEn: "Program Details"
   },
   {
     id: 2,
-    titleMr: "डिजिटल पत्रकारिता व सायबर सुरक्षा राज्यस्तरीय कार्यशाळा",
-    titleEn: "Digital Journalism & Cyber Safety Workshop",
-    placeMr: "प्रेस क्लब सभागृह, पुणे",
-    placeEn: "Press Club Hall, Pune",
-    dateMr: "२८ ऑक्टोबर २०२६",
-    dateEn: "October 28, 2026",
-    organizerMr: "माहिती तंत्रज्ञान व प्रशिक्षण विकास समिती",
-    organizerEn: "IT & Training Development Committee",
-    descMr: "तथ्य पडताळणी (Fact Checking), सायबर कायदे, डिजिटल माध्यमांचे नियमन आणि निर्भय वार्तांकन यावर तज्ज्ञांचे मार्गदर्शन.",
-    descEn: "Practical training on fact-checking, cyber forensics, defamation laws, and digital media compliance by senior legal & technical experts."
+    titleMr: "कार्यक्रमाचे नाव",
+    titleEn: "Event Name",
+    placeMr: "ठिकाण",
+    placeEn: "Location",
+    dateMr: "दिनांक",
+    dateEn: "Date",
+    organizerMr: "आयोजक / समिती",
+    organizerEn: "Organizer / Committee",
+    descMr: "कार्यक्रमाची माहिती",
+    descEn: "Program Details"
   },
   {
     id: 3,
-    titleMr: "पत्रकार हक्क व संरक्षण जनजागृती मोहीम",
-    titleEn: "Journalist Protection & Rights Outreach",
-    placeMr: "जिल्हा पत्रकार भवन, छत्रपती संभाजीनगर",
-    placeEn: "Patrakar Bhavan, Chhatrapati Sambhajinagar",
-    dateMr: "१२ डिसेंबर २०२६",
-    dateEn: "December 12, 2026",
-    organizerMr: "विभागीय कार्यकारणी व विधी सेल",
-    organizerEn: "Divisional Executive & Legal Cell",
-    descMr: "ग्रामीण व तालुका पत्रकारांवर होणारे हल्ले, दबाव व खोट्या गुन्ह्यांविरोधात कायदेशीर मदत व हेल्पलाइन संदर्भात मार्गदर्शन शिबीर.",
-    descEn: "Legal aid workshop and guidance session providing support to rural reporters facing intimidation, harassment, or spurious FIRs."
+    titleMr: "कार्यक्रमाचे नाव",
+    titleEn: "Event Name",
+    placeMr: "ठिकाण",
+    placeEn: "Location",
+    dateMr: "दिनांक",
+    dateEn: "Date",
+    organizerMr: "आयोजक / समिती",
+    organizerEn: "Organizer / Committee",
+    descMr: "कार्यक्रमाची माहिती",
+    descEn: "Program Details"
   }
 ];

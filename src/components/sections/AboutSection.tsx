@@ -32,7 +32,7 @@ export function AboutSection() {
             <p>
               {lang === 'mr'
                 ? 'आज महासंघ देशभरातील प्रिंट मीडिया, इलेक्ट्रॉनिक मीडिया, डिजिटल मीडिया, वृत्तसंस्था, नियतकालिके आणि स्वतंत्र पत्रकारांना एका सक्षम व्यासपीठावर एकत्र आणत पत्रकारांच्या हक्कांचे संरक्षण, व्यावसायिक सक्षमीकरण आणि जबाबदार पत्रकारितेचा प्रसार करण्यासाठी कटिबद्ध आहे.'
-                : 'Today, the federation unites print media, electronic broadcast media, digital media, news agencies, periodicals, and independent journalists onto a empowered platform, committed to protecting journalists’ rights, ensuring professional empowerment, and promoting responsible journalism.'}
+                : 'Today, the federation unites print media, electronic broadcast media, digital media, news agencies, periodicals, and independent journalists onto an empowered platform, committed to protecting journalists’ rights, ensuring professional empowerment, and promoting responsible journalism.'}
             </p>
           </div>
 
@@ -41,7 +41,7 @@ export function AboutSection() {
             <div className="flex items-center gap-2 mb-2 text-[#287A18]">
               <span className="text-base font-bold">🏛️</span>
               <h4 className="text-sm font-black text-[#172A4A] uppercase tracking-wide">
-                {lang === 'mr' ? 'लोकशाही परिवार — पत्रकारांचे एक राष्ट्रीय कुटुंब' : 'Lokshahi Family — A National Journalist Household'}
+                {lang === 'mr' ? 'लोकशाही परिवार — पत्रकारांचे एक राष्ट्रीय कुटुंब' : 'Lokshahi Family — A National Journalist Community'}
               </h4>
             </div>
             <p className="text-xs sm:text-sm leading-relaxed text-[#172A4A]/80">
@@ -99,7 +99,7 @@ export function AboutSection() {
                   {lang === 'mr' ? 'एकूण सदस्य' : 'Total Members'}
                 </span>
                 <span className="text-sm font-black text-[#E30620]">
-                  {lang === 'mr' ? '७,६००+ पत्रकार' : '7,600+ Press'}
+                  {lang === 'mr' ? '७,६००+ सदस्य' : '7,600+ Members'}
                 </span>
               </div>
               <div className="p-2.5 rounded-lg bg-[#F7F3EC] border border-[#172A4A]/10">
@@ -107,7 +107,7 @@ export function AboutSection() {
                   {lang === 'mr' ? 'समित्या' : 'Committees'}
                 </span>
                 <span className="text-sm font-black text-[#2855A5]">
-                  {lang === 'mr' ? '७८ विभाग' : '78 Sectors'}
+                  {lang === 'mr' ? '७८ समित्या' : '78 Committees'}
                 </span>
               </div>
               <div className="p-2.5 rounded-lg bg-[#F7F3EC] border border-[#172A4A]/10">
@@ -115,19 +115,16 @@ export function AboutSection() {
                   {lang === 'mr' ? 'कार्यक्षेत्र' : 'Reach'}
                 </span>
                 <span className="text-sm font-black text-[#287A18]">
-                  {lang === 'mr' ? '२८ राज्ये' : '28 States'}
+                  {lang === 'mr' ? 'भारतभर कार्यक्षेत्र' : 'Pan-India Reach'}
                 </span>
               </div>
             </div>
 
             <div className="w-full mt-4 p-3 rounded-xl bg-[#172A4A] text-white text-xs text-left">
-              <span className="font-bold text-[#F7F3EC] block mb-1">
-                {lang === 'mr' ? 'केंद्रीय ध्येय व कार्य' : 'Apex Mission:'}
-              </span>
-              <p className="text-[11px] text-[#F7F3EC]/80 leading-relaxed">
+              <p className="text-[11px] text-[#F7F3EC]/90 leading-relaxed">
                 {lang === 'mr'
-                  ? 'पत्रकार प्रशिक्षण शिबिरे, राज्य व राष्ट्रीय अधिवेशने, प्रेस परिषदा आणि कायदेशीर मदत मोहिमेचे सातत्यपूर्ण आयोजन.'
-                  : 'Conducting regular training camps, annual national conventions, legal defense drives, and media freedom representations.'}
+                  ? 'महासंघ विविध माध्यमांतून पत्रकारांच्या सक्षमीकरणासाठी आणि समाजजागृतीसाठी सातत्याने कार्यरत आहे: पत्रकार प्रशिक्षण शिबिरे, कार्यशाळा, राज्य व राष्ट्रीय अधिवेशने आणि प्रेस परिषदा.'
+                  : 'Active across training workshops, state and national conventions, press conferences, and media empowerment.'}
               </p>
             </div>
           </div>

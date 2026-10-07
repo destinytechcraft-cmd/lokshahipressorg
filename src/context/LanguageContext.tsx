@@ -8,11 +8,11 @@ export const dict: Record<DictKey, { mr: string; en: string }> = {
   },
   tagline: {
     mr: 'सत्यासाठी लढणार, अन्यायाला भिडणार!',
-    en: 'Fight for truth, stand against injustice!',
+    en: 'Fight for Truth, Stand Against Injustice!',
   },
   values: {
     mr: 'न्याय • हक्क • अधिकार • लोकशाही',
-    en: 'Justice • Rights • Authority • Democracy',
+    en: 'Justice • Rights • Empowerment • Democracy',
   },
   nav_home: {
     mr: 'मुख्यपृष्ठ',
@@ -67,28 +67,28 @@ export const dict: Record<DictKey, { mr: string; en: string }> = {
     en: 'Contact Us',
   },
   btn_join: {
-    mr: 'सामील व्हा',
-    en: 'Join Us',
+    mr: 'JOIN US',
+    en: 'JOIN US',
   },
   btn_voice: {
-    mr: 'आवाज उठवा',
-    en: 'Raise Your Voice',
+    mr: 'RAISE YOUR VOICE',
+    en: 'RAISE YOUR VOICE',
   },
   btn_helpdesk: {
-    mr: 'पत्रकार मदत कक्ष',
-    en: 'Journalist Help Desk',
+    mr: 'JOURNALIST HELP DESK',
+    en: 'JOURNALIST HELP DESK',
   },
   btn_submit: {
-    mr: 'सबमिट करा',
+    mr: 'Submit',
     en: 'Submit',
   },
   btn_join_member: {
-    mr: 'सदस्य व्हा',
-    en: 'Join Mahasangh',
+    mr: 'JOIN LOKSHAHI PATRAKAR MAHASANGH',
+    en: 'JOIN LOKSHAHI PATRAKAR MAHASANGH',
   },
   btn_submit_issue: {
-    mr: 'प्रश्न पाठवा',
-    en: 'Submit Your Issue',
+    mr: 'SUBMIT YOUR ISSUE',
+    en: 'SUBMIT YOUR ISSUE',
   },
   sec_media_coverage: {
     mr: 'मीडिया कव्हरेज',
@@ -99,7 +99,7 @@ export const dict: Record<DictKey, { mr: string; en: string }> = {
     en: 'Our Strength',
   },
   sec_about: {
-    mr: 'आमच्याविषयी',
+    mr: 'ABOUT US',
     en: 'About Us',
   },
   sec_role: {
@@ -107,59 +107,59 @@ export const dict: Record<DictKey, { mr: string; en: string }> = {
     en: 'Our Role',
   },
   sec_vision: {
-    mr: 'आमचे ध्येय (Vision)',
-    en: 'Our Vision',
+    mr: 'VISION — आमचे ध्येय',
+    en: 'Vision',
   },
   sec_org: {
-    mr: 'संघटनेची रचना',
-    en: 'Organisation Structure',
+    mr: 'ORGANISATION — संघटनेची रचना',
+    en: 'Organisation',
   },
   sec_committees: {
-    mr: 'लोकशाही समिती विभाग (७८ समित्या)',
-    en: 'Committees (78 Committees)',
+    mr: 'लोकशाही समिती विभाग',
+    en: 'Committees',
   },
   sec_rights: {
-    mr: 'पत्रकारांचे न्याय, हक्क आणि अधिकार',
+    mr: "JOURNALISTS' RIGHTS — पत्रकारांचे न्याय, हक्क आणि अधिकार",
     en: "Journalists' Rights",
   },
   sec_social: {
-    mr: 'पत्रकारतेसोबत सामाजिक बांधिलकी',
+    mr: 'SOCIAL WORK — पत्रकारितेसोबत सामाजिक बांधिलकी',
     en: 'Social Work',
   },
   sec_achievements: {
-    mr: 'आमची ११ वर्षांची वाटचाल',
+    mr: 'OUR ACHIEVEMENTS — आमची 11 वर्षांची वाटचाल',
     en: 'Our Achievements',
   },
   sec_roadmap: {
-    mr: 'भविष्यातील रोडमॅप',
+    mr: 'FUTURE ROADMAP — भविष्यातील रोडमॅप',
     en: 'Future Roadmap',
   },
   sec_media: {
-    mr: 'मीडिया सेक्शन',
+    mr: 'MEDIA SECTION',
     en: 'Media Section',
   },
   sec_events: {
-    mr: 'कार्यक्रम आणि उपक्रम',
+    mr: 'EVENTS — कार्यक्रम आणि उपक्रम',
     en: 'Events',
   },
   sec_membership: {
-    mr: 'सदस्यत्व (Membership)',
+    mr: 'MEMBERSHIP',
     en: 'Membership',
   },
   sec_helpdesk: {
-    mr: 'पत्रकार मदत कक्ष (Journalist Help Desk)',
+    mr: 'JOURNALIST HELP DESK — पत्रकार मदत कक्ष',
     en: 'Journalist Help Desk',
   },
   sec_grievance: {
-    mr: 'जन तक्रार निवारण (Public Grievance)',
-    en: 'Public Grievance Redressal',
+    mr: 'PUBLIC GRIEVANCE — जनतेच्या प्रश्नांना वाचा फोडण्यासाठी',
+    en: 'Public Grievance',
   },
   sec_leadership: {
-    mr: 'टीम लोकशाही — राष्ट्रीय नेतृत्व',
-    en: 'Team Lokshahi — National Leadership',
+    mr: 'LEADERSHIP — टीम लोकशाही',
+    en: 'Leadership',
   },
   sec_contact: {
-    mr: 'संपर्क (Contact Us)',
+    mr: 'CONTACT US',
     en: 'Contact Us',
   },
   sec_org_network: {
@@ -214,6 +214,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       // LocalStorage access fallback
     }
   }, []);
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = lang;
+      document.documentElement.className = lang === 'mr' ? 'lang-mr' : 'lang-en';
+    }
+  }, [lang]);
 
   const setLang = (nextLang: Language) => {
     setLangState(nextLang);
