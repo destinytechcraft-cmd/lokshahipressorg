@@ -112,7 +112,7 @@ export function ContactSection() {
                 {lang === 'mr' ? 'थेट संपर्क किंवा संदेश पाठवण्यासाठी :' : 'For direct inquiries or messages :'}
               </span>
               <span className="text-[11px] text-[#172A4A]/70 font-semibold">
-                {lang === 'mr' ? 'आमच्या अधिकृत Google Form द्वारे संदेश पाठवा' : 'Send a message via our official Google Form'}
+                {lang === 'mr' ? 'आमच्या अधिकृत फॉर्मद्वारे संदेश पाठवा' : 'Send a message via our official form'}
               </span>
             </div>
             <WFButton

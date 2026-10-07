@@ -74,7 +74,7 @@ export function MembershipSection({ onJoinClick }: { onJoinClick?: () => void })
           </div>
         </div>
 
-        {/* Exact Button text from PDF Page 14 - Direct Google Form CTA Button */}
+        {/* Exact Button text from PDF Page 14 - Direct Form CTA Button */}
         <div className="mt-8 flex justify-center">
           <WFButton
             variant="solid"
@@ -83,7 +83,7 @@ export function MembershipSection({ onJoinClick }: { onJoinClick?: () => void })
             onClick={onJoinClick}
             className="w-full sm:w-auto px-6 sm:px-8 py-3.5 text-xs sm:text-sm font-black tracking-wide uppercase shadow-md bg-[#172A4A] hover:bg-[#0f1c32] text-white text-center"
           >
-            {lang === 'mr' ? 'लोकशाही पत्रकार महासंघात सामील व्हा (Google Form) ↗' : 'JOIN LOKSHAHI PATRAKAR MAHASANGH (Google Form) ↗'}
+            {lang === 'mr' ? 'लोकशाही पत्रकार महासंघात सामील व्हा (फॉर्म) ↗' : 'JOIN LOKSHAHI PATRAKAR MAHASANGH (FORM) ↗'}
           </WFButton>
         </div>
       </div>

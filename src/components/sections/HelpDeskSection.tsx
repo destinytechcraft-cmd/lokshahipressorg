@@ -30,14 +30,14 @@ export function HelpDeskSection() {
                   {lang === 'mr' ? 'अधिकृत नोंदणी कक्ष' : 'OFFICIAL GRIEVANCE DESK'}
                 </span>
                 <h4 className="text-lg sm:text-xl font-black text-[#172A4A]">
-                  {lang === 'mr' ? 'समस्या नोंदणी अर्ज (Google Form)' : 'Register Your Problem (Google Form)'}
+                  {lang === 'mr' ? 'समस्या नोंदणी अर्ज (फॉर्म)' : 'Register Your Problem (Form)'}
                 </h4>
               </div>
 
               <p className="text-xs sm:text-sm text-[#172A4A]/85 leading-relaxed font-medium">
                 {lang === 'mr'
-                  ? 'पत्रकार संरक्षण, अन्याय निवारण आणि कायदेशीर मदतीसाठी अधिकृत तक्रार अर्ज Google Form द्वारे उपलब्ध आहे. खालील बटणावर क्लिक करून थेट तक्रार नोंदवा:'
-                  : 'For journalist protection, legal assistance, and grievance redressal, the official application is accessible via Google Form. Click below to submit directly:'}
+                  ? 'पत्रकार संरक्षण, अन्याय निवारण आणि कायदेशीर मदतीसाठी अधिकृत तक्रार अर्ज फॉर्मद्वारे उपलब्ध आहे. खालील बटणावर क्लिक करून थेट तक्रार नोंदवा:'
+                  : 'For journalist protection, legal assistance, and grievance redressal, the official application is accessible via the form. Click below to submit directly:'}
               </p>
 
               {/* Form Checklist Points */}
@@ -68,7 +68,7 @@ export function HelpDeskSection() {
                   target="_blank"
                   className="w-full sm:w-auto px-8 py-3.5 text-sm sm:text-base font-black shadow-lg bg-[#E30620] hover:bg-[#c7051b] text-white tracking-wide uppercase"
                 >
-                  {lang === 'mr' ? 'समस्या नोंदणी अर्ज उघडा (Google Form) ↗' : 'OPEN GRIEVANCE FORM (Google Form) ↗'}
+                  {lang === 'mr' ? 'समस्या नोंदणी अर्ज उघडा (फॉर्म) ↗' : 'OPEN GRIEVANCE FORM (FORM) ↗'}
                 </WFButton>
                 <span className="text-[11px] font-bold text-[#172A4A]/60">
                   {lang === 'mr' ? '• नवीन विंडोमध्ये उघडेल' : '• Opens in a new window'}

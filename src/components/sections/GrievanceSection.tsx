@@ -50,7 +50,7 @@ export function GrievanceSection({ onSubmitIssueClick }: { onSubmitIssueClick?: 
             onClick={onSubmitIssueClick}
             className="w-full sm:w-auto px-8 py-3.5 text-xs sm:text-sm font-black bg-[#E30620] hover:bg-[#c7051b] shadow-md uppercase tracking-wider text-white"
           >
-            {lang === 'mr' ? 'आपला प्रश्न नोंदवा (Google Form) ↗' : 'SUBMIT YOUR ISSUE (Google Form) ↗'}
+            {lang === 'mr' ? 'आपला प्रश्न नोंदवा (फॉर्म) ↗' : 'SUBMIT YOUR ISSUE (FORM) ↗'}
           </WFButton>
         </div>
       </div>

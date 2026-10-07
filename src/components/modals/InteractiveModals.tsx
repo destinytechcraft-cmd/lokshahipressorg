@@ -53,10 +53,10 @@ export function JoinMembershipModal({
         </div>
 
         <div className="mt-5 space-y-4">
-          <p className="text-xs sm:text-sm text-[#172A4A]/80 leading-relaxed font-medium">
+          <p className="text-xs sm:text-sm text-[#172A4A]/85 leading-relaxed font-medium">
             {lang === 'mr'
-              ? 'महासंघाचे अधिकृत सदस्यत्व घेण्यासाठी खालील बटणावर क्लिक करून Google Form द्वारे आपली नोंदणी पूर्ण करा:'
-              : 'To obtain official membership with the federation, click the button below to complete registration via Google Form:'}
+              ? 'महासंघाचे अधिकृत सदस्यत्व घेण्यासाठी खालील बटणावर क्लिक करून फॉर्मद्वारे आपली नोंदणी पूर्ण करा:'
+              : 'To obtain official membership with the federation, click the button below to complete registration via the form:'}
           </p>
 
           <div>
@@ -94,7 +94,7 @@ export function JoinMembershipModal({
               onClick={onClose}
               className="px-6 py-2.5 bg-[#E30620] hover:bg-[#c7051b] text-white font-black text-xs sm:text-sm shadow-md uppercase tracking-wider text-center"
             >
-              {lang === 'mr' ? 'सदस्य नोंदणी फॉर्म उघडा ↗' : 'OPEN MEMBERSHIP FORM (Google Form) ↗'}
+              {lang === 'mr' ? 'सदस्य नोंदणी अर्ज उघडा ↗' : 'OPEN MEMBERSHIP FORM ↗'}
             </WFButton>
           </div>
         </div>
@@ -145,10 +145,10 @@ export function QuickIssueModal({
         </div>
 
         <div className="mt-4 space-y-4">
-          <p className="text-xs sm:text-sm text-[#172A4A]/80 leading-relaxed font-medium">
+          <p className="text-xs sm:text-sm text-[#172A4A]/85 leading-relaxed font-medium">
             {lang === 'mr'
-              ? 'पत्रकारांवरील अन्याय, कायदेशीर अडचणी किंवा समस्या निवारणासाठी अधिकृत तक्रार अर्ज Google Form द्वारे नोंदवा:'
-              : 'For injustice against journalists, legal issues, or redressal, submit your grievance directly via the official Google Form:'}
+              ? 'पत्रकारांवरील अन्याय, कायदेशीर अडचणी किंवा समस्या निवारणासाठी अधिकृत तक्रार अर्ज फॉर्मद्वारे नोंदवा:'
+              : 'For injustice against journalists, legal issues, or redressal, submit your grievance directly via the official form:'}
           </p>
 
           <div className="rounded-xl border border-[#172A4A]/15 bg-[#F7F3EC]/70 p-3.5 space-y-2 text-xs text-[#172A4A] font-semibold">
