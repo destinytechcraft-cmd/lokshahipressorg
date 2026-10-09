@@ -12,7 +12,7 @@ export function HelpDeskSection() {
         {/* Banner from PDF Page 14 */}
         <div className="rounded-2xl border-2 border-[#172A4A]/20 bg-white p-6 sm:p-8 shadow-xs">
           <h3 className="text-xl sm:text-2xl font-black text-[#172A4A] tracking-tight mb-2">
-            {lang === 'mr' ? 'पत्रकार मदत कक्ष' : 'Journalist Help Desk'}
+            {lang === 'mr' ? 'पत्रकार व जन मदत कक्ष' : 'Journalist & Public Helpdesk'}
           </h3>
           <p className="text-xs sm:text-sm text-[#172A4A]/80 leading-relaxed">
             {lang === 'mr'

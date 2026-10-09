@@ -17,6 +17,7 @@ export type DictKey =
   | 'nav_home'
   | 'nav_about'
   | 'nav_org'
+  | 'nav_leadership'
   | 'nav_rights'
   | 'nav_committees'
   | 'nav_social'

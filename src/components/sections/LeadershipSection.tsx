@@ -17,9 +17,6 @@ export function LeadershipSection() {
           <h3 className="text-xl sm:text-2xl font-black text-[#172A4A] tracking-tight">
             {lang === 'mr' ? 'टीम लोकशाही — राष्ट्रीय नेतृत्व' : 'Team Lokshahi — National Leadership'}
           </h3>
-          <p className="mt-1 text-xs sm:text-sm text-neutral-600">
-            {lang === 'mr' ? 'येथे फोटोसह: Photo + Name + Designation + State + Short Profile' : 'With photo: Photo + Name + Designation + State + Short Profile'}
-          </p>
         </div>
 
         {/* Leadership Grid matching PDF Page 16 specifications: Photo + Name + Designation + State + Short Profile */}

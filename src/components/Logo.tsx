@@ -1,22 +1,31 @@
 import React from 'react';
 
-interface LogoProps {
+export interface LogoProps {
   className?: string;
   size?: number;
+  variant?: 'auto' | 'marathi' | 'empty';
+  title?: string;
 }
 
 /**
- * Empty circle layout for logo across the website as requested.
- * The user will add the actual logo graphic later.
+ * Universal Empty Circle Logo placeholder.
+ * Replaces the logo graphic with a clean circular placeholder.
  */
-export function Logo({ className = 'h-10 w-10', size }: LogoProps) {
+export function Logo({
+  className = 'h-10 w-10',
+  size,
+  title,
+}: LogoProps) {
   return (
     <div
       style={size ? { width: size, height: size } : undefined}
-      className={`rounded-full border-2 border-dashed border-current/35 bg-current/5 shrink-0 transition-all ${className}`}
-      aria-label="Logo placeholder (empty circle layout)"
+      className={`rounded-full border-2 border-dashed border-current/40 bg-current/5 shrink-0 transition-all ${className}`}
+      aria-label={title || 'Logo placeholder (empty circle)'}
       role="img"
     />
   );
 }
 
+export function MarathiLogoGraphic(props: LogoProps) {
+  return <Logo {...props} />;
+}

@@ -69,7 +69,7 @@ export function Hero({
   }, [backgroundSlides.length]);
 
   return (
-    <section className="relative min-h-[calc(100vh-65px)] lg:min-h-screen w-full flex items-center justify-start overflow-hidden border-b-4 border-[#E30620]">
+    <section className="relative w-full flex items-center justify-start overflow-hidden border-b-4 border-[#E30620] min-h-[380px] sm:min-h-[420px] md:min-h-[460px] lg:min-h-[500px]">
       {/* 4 Auto-scrolling background image layers with smooth crossfade */}
       <div className="absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0">
         {backgroundSlides.map((slide, idx) => {
@@ -84,7 +84,7 @@ export function Hero({
               <img
                 src={slide.imageSrc}
                 alt={slide.titleEn}
-                className="w-full h-full object-cover object-top sm:object-center scale-105 transition-transform duration-[4000ms] ease-out"
+                className="w-full h-full object-cover object-[center_20%] scale-105 transition-transform duration-[4000ms] ease-out"
               />
             </div>
           );
@@ -97,21 +97,22 @@ export function Hero({
         <div className="absolute inset-0 bg-gradient-to-r from-[#071120]/85 via-[#0A1628]/50 to-transparent" />
       </div>
 
-      {/* Hero Foreground Content - Left Side Aligned Layout as requested */}
-      <div className="relative z-10 w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 flex flex-col items-start text-left mr-auto">
-        <div className="flex flex-col items-start text-left max-w-3xl">
-          {/* Top Badges */}
-          <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-2.5 mb-5 sm:mb-6">
-            <span className="rounded-full bg-white text-[#172A4A] px-3.5 py-1 text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-md">
+      {/* Hero Foreground Content - Landscape Banner Layout */}
+      <div className="relative z-10 w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-14 flex flex-col items-start text-left mr-auto">
+        <div className="flex flex-col items-start text-left max-w-4xl lg:max-w-5xl">
+          {/* Top Heading Eyebrow - Background colors removed, enlarged font */}
+          <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-3 mb-3 sm:mb-4">
+            <span className="text-sm sm:text-base md:text-lg font-black uppercase tracking-wide text-white drop-shadow-sm">
               {lang === 'mr' ? 'लोकशाही पत्रकार महासंघ भारत' : 'LOKSHAHI PATRAKAR MAHASANGH BHARAT'}
             </span>
-            <span className="rounded-full bg-[#E30620] text-white px-3.5 py-1 text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-md border border-white/20">
+            <span className="hidden sm:inline text-white/50 text-base font-bold select-none">•</span>
+            <span className="text-sm sm:text-base md:text-lg font-black uppercase tracking-wide text-[#E30620] drop-shadow-sm">
               {lang === 'mr' ? 'राष्ट्रीय नोंदणीकृत व्यासपीठ' : 'Nationally Registered Body'}
             </span>
           </div>
 
-          {/* Main Headline - Preserved Verbatim */}
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-snug sm:leading-tight text-white tracking-tight drop-shadow-md text-left">
+          {/* Main Headline - Extra Large Headline */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight sm:leading-tight text-white tracking-tight drop-shadow-xl text-left">
             {lang === 'mr' ? (
               <>
                 <span className="text-[#E30620]">सत्यासाठी</span> लढणार, <span className="text-white">अन्यायाला</span> भिडणार!
@@ -124,12 +125,12 @@ export function Hero({
           </h1>
 
           {/* Values Strip */}
-          <div className="mt-3 flex flex-wrap items-center justify-start gap-x-2 gap-y-1 text-xs sm:text-sm font-black text-[#E6530C] uppercase tracking-[0.2em] text-left">
+          <div className="mt-2.5 flex flex-wrap items-center justify-start gap-x-2 gap-y-1 text-xs sm:text-sm font-black text-[#E6530C] uppercase tracking-[0.2em] text-left">
             <span>{t('values')}</span>
           </div>
 
           {/* Strength Badges - 4 Badges */}
-          <div className="mt-6 sm:mt-7 flex flex-wrap items-center justify-start gap-2 sm:gap-3 max-w-2xl">
+          <div className="mt-5 sm:mt-6 flex flex-wrap items-center justify-start gap-2 sm:gap-3 max-w-2xl">
             {heroBadges.map((badge, idx) => (
               <span
                 key={idx}
@@ -139,58 +140,22 @@ export function Hero({
               </span>
             ))}
           </div>
-
-          {/* Action Buttons: JOIN US & RAISE YOUR VOICE - Direct Google Form CTA Buttons */}
-          <div className="mt-7 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3 sm:gap-4 w-full sm:w-auto">
-            <WFButton
-              variant="solid"
-              href={GOOGLE_FORM_LINKS.joinMembership}
-              target="_blank"
-              onClick={onJoinClick}
-              className="w-full sm:w-auto min-h-[44px] px-7 py-3 text-sm sm:text-base font-black shadow-lg bg-[#E30620] hover:bg-[#c7051b] text-white tracking-wide"
-            >
-              {t('btn_join')}
-            </WFButton>
-            <WFButton
-              variant="outline"
-              href={GOOGLE_FORM_LINKS.raiseVoice}
-              target="_blank"
-              onClick={onVoiceClick}
-              className="w-full sm:w-auto min-h-[44px] px-7 py-3 text-sm sm:text-base font-black border-2 border-white text-white hover:bg-white hover:text-[#172A4A] tracking-wide backdrop-blur-sm"
-            >
-              {t('btn_voice')}
-            </WFButton>
-          </div>
-
-          {/* Background Auto-scroller Navigator Controls (3-4 images) */}
-          <div className="mt-8 sm:mt-10 max-w-[calc(100vw-32px)] flex flex-col sm:flex-row items-start sm:items-center justify-start gap-2.5 sm:gap-3 bg-black/40 backdrop-blur-md border border-white/15 px-4 py-2 sm:py-2 rounded-2xl sm:rounded-full shadow-lg">
-            <div className="flex items-center gap-2 max-w-full overflow-hidden">
-              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white/70 shrink-0">
-                {lang === 'mr' ? 'पार्श्वभूमी दृश्य' : 'BG Slide'} {currentSlide + 1} / {backgroundSlides.length}:
-              </span>
-              <span className="text-xs font-bold text-white truncate max-w-[220px] sm:max-w-xs">
-                {lang === 'mr' ? backgroundSlides[currentSlide].titleMr : backgroundSlides[currentSlide].titleEn}
-              </span>
-            </div>
-
-            {/* Dots Indicator */}
-            <div className="flex items-center gap-1.5 shrink-0">
-              {backgroundSlides.map((_, index) => (
-                <button
-                  key={index}
-                  type="button"
-                  onClick={() => setCurrentSlide(index)}
-                  aria-label={`Switch to slide ${index + 1}`}
-                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                    index === currentSlide
-                      ? 'w-7 bg-[#E30620] shadow-sm'
-                      : 'w-2 bg-white/40 hover:bg-white/80'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
         </div>
+      </div>
+
+      {/* Slide Navigation Dots in bottom right */}
+      <div className="absolute bottom-4 right-4 sm:bottom-5 sm:right-8 z-20 flex items-center gap-1.5 sm:gap-2 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15">
+        {backgroundSlides.map((slide, idx) => (
+          <button
+            key={slide.id}
+            type="button"
+            onClick={() => setCurrentSlide(idx)}
+            aria-label={`Go to slide ${idx + 1}`}
+            className={`h-2 rounded-full transition-all cursor-pointer ${
+              idx === currentSlide ? 'w-5 sm:w-6 bg-[#E30620]' : 'w-2 bg-white/60 hover:bg-white'
+            }`}
+          />
+        ))}
       </div>
 
       {/* Tricolor bottom indicator band */}
@@ -205,10 +170,16 @@ export function Hero({
 
 /**
  * Editorial Intro Section placed right after the Hero Section ends.
- * Contains verbatim text from PDF Page 18.
+ * Contains verbatim text from PDF Page 18 followed by the action CTA buttons.
  */
-export function HeroIntroSection() {
-  const { lang } = useLanguage();
+export function HeroIntroSection({
+  onJoinClick,
+  onVoiceClick,
+}: {
+  onJoinClick?: () => void;
+  onVoiceClick?: () => void;
+}) {
+  const { t, lang } = useLanguage();
 
   return (
     <section className="bg-white border-b border-[#172A4A]/15 py-10 sm:py-14 text-left">
@@ -224,16 +195,44 @@ export function HeroIntroSection() {
           </div>
 
           <div className="space-y-4 text-xs sm:text-sm md:text-base text-[#172A4A]/90 leading-relaxed font-medium">
-            <p className="first-letter:text-3xl sm:first-letter:text-4xl first-letter:font-black first-letter:text-[#E30620] first-letter:float-left first-letter:mr-2.5 first-letter:leading-none">
-              {lang === 'mr'
-                ? 'लोकशाही पत्रकार महासंघ भारत हे देशभरातील पत्रकार आणि सामाजिक कार्यकर्त्यांच्या न्याय, हक्क, अधिकार आणि सन्मानासाठी कार्यरत असलेले राष्ट्रीय नोंदणीकृत व्यासपीठ आहे. गेल्या ११ वर्षांपासून पत्रकारिता, सामाजिक बांधिलकी आणि लोकशाही मूल्यांच्या संरक्षणासाठी सातत्याने कार्यरत असलेल्या महासंघाने पत्रकार कल्याण, जनहित आणि सामाजिक उत्तरदायित्वाच्या विविध उपक्रमांद्वारे देशभरात आपली स्वतंत्र व विश्वासार्ह ओळख निर्माण केली आहे.'
-                : 'Lokshahi Patrakar Mahasangh Bharat is a nationally registered platform operating for the justice, rights, dignity and empowerment of journalists and social activists across India. Committed for over 11 years, the federation stands for democratic ethics, media welfare, and constitutional freedom.'}
+            <p>
+              {lang === 'mr' ? (
+                <>
+                  <span className="text-2xl sm:text-3xl font-black text-[#E30620] inline-block align-baseline leading-none mr-0.5">लोक</span>शाही पत्रकार महासंघ भारत हे देशभरातील पत्रकार आणि सामाजिक कार्यकर्त्यांच्या न्याय, हक्क, अधिकार आणि सन्मानासाठी कार्यरत असलेले राष्ट्रीय नोंदणीकृत व्यासपीठ आहे. गेल्या ११ वर्षांपासून पत्रकारिता, सामाजिक बांधिलकी आणि लोकशाही मूल्यांच्या संरक्षणासाठी सातत्याने कार्यरत असलेल्या महासंघाने पत्रकार कल्याण, जनहित आणि सामाजिक उत्तरदायित्वाच्या विविध उपक्रमांद्वारे देशभरात आपली स्वतंत्र व विश्वासार्ह ओळख निर्माण केली आहे.
+                </>
+              ) : (
+                <>
+                  <span className="text-2xl sm:text-3xl font-black text-[#E30620] inline-block align-baseline leading-none mr-0.5">Lok</span>shahi Patrakar Mahasangh Bharat is a nationally registered platform operating for the justice, rights, dignity and empowerment of journalists and social activists across India. Committed for over 11 years, the federation stands for democratic ethics, media welfare, and constitutional freedom.
+                </>
+              )}
             </p>
             <p>
               {lang === 'mr'
                 ? 'आज महासंघ देशभरातील प्रिंट मीडिया, इलेक्ट्रॉनिक मीडिया, डिजिटल मीडिया, वृत्तसंस्था, नियतकालिके आणि स्वतंत्र पत्रकारांना एका सक्षम व्यासपीठावर एकत्र आणत पत्रकारांच्या हक्कांचे संरक्षण, व्यावसायिक सक्षमीकरण आणि जबाबदार पत्रकारितेचा प्रसार करण्यासाठी कटिबद्ध आहे.'
                 : 'Today, the federation unites print media, electronic broadcast media, digital portals, news agencies, periodicals, and independent journalists onto an empowered platform, committed to protecting journalists’ rights, ensuring professional empowerment, and advancing responsible journalism.'}
             </p>
+          </div>
+
+          {/* Action Buttons: JOIN US & RAISE YOUR VOICE - Moved after the intro paragraph */}
+          <div className="mt-7 pt-5 border-t border-[#172A4A]/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3 sm:gap-4 w-full sm:w-auto">
+            <WFButton
+              variant="solid"
+              href={GOOGLE_FORM_LINKS.joinMembership}
+              target="_blank"
+              onClick={onJoinClick}
+              className="w-full sm:w-auto min-h-[44px] px-7 py-3 text-sm sm:text-base font-black shadow-md bg-[#E30620] hover:bg-[#c7051b] text-white tracking-wide"
+            >
+              {t('btn_join')}
+            </WFButton>
+            <WFButton
+              variant="outline"
+              href={GOOGLE_FORM_LINKS.raiseVoice}
+              target="_blank"
+              onClick={onVoiceClick}
+              className="w-full sm:w-auto min-h-[44px] px-7 py-3 text-sm sm:text-base font-black border-2 border-[#172A4A] text-[#172A4A] hover:bg-[#172A4A] hover:text-white tracking-wide transition-colors"
+            >
+              {t('btn_voice')}
+            </WFButton>
           </div>
         </div>
       </div>

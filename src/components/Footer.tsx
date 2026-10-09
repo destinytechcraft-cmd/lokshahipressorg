@@ -20,9 +20,11 @@ const footerValues = [
 const quickLinks: { key: DictKey; href: string }[] = [
   { key: 'nav_about', href: '/about' },
   { key: 'nav_org', href: '/organisation' },
+  { key: 'nav_leadership', href: '/leadership' },
   { key: 'nav_rights', href: '/rights' },
   { key: 'nav_social', href: '/social-work' },
   { key: 'nav_events', href: '/events' },
+  { key: 'nav_roadmap', href: '/roadmap' },
   { key: 'nav_membership', href: '/membership' },
   { key: 'nav_media', href: '/media' },
   { key: 'nav_helpdesk', href: '/help-desk' },
@@ -61,7 +63,7 @@ export function Footer({ onNavigate }: { onNavigate?: (path: string) => void }) 
             <div className="flex items-center gap-3">
               <Logo size={40} className="h-10 w-10 text-white border-white/40 bg-white/5 shrink-0" />
               <span className="text-sm sm:text-base font-black text-white tracking-wide block">
-                LOKSHAHI PATRAKAR MAHASANGH BHARAT
+                {lang === 'mr' ? 'लोकशाही पत्रकार महासंघ भारत' : 'LOKSHAHI PATRAKAR MAHASANGH BHARAT'}
               </span>
             </div>
 

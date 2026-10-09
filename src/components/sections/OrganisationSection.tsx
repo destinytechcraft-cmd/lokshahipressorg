@@ -57,8 +57,8 @@ export function OrganisationSection() {
           ))}
         </div>
 
-        {/* Dashboard Table requested on Page 6 of the PDF */}
-        <WFCard label={lang === 'mr' ? 'डॅशबोर्ड (Dashboard)' : 'Dashboard'}>
+        {/* 3-Row Dashboard Table restored without the '● डॅशबोर्ड (DASHBOARD)' title line */}
+        <WFCard>
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs sm:text-sm text-neutral-700 border-collapse">
               <thead>

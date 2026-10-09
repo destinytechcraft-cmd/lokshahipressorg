@@ -26,6 +26,10 @@ export const dict: Record<DictKey, { mr: string; en: string }> = {
     mr: 'संघटना',
     en: 'Organisation',
   },
+  nav_leadership: {
+    mr: 'नेतृत्व',
+    en: 'Leadership',
+  },
   nav_rights: {
     mr: 'पत्रकार हक्क',
     en: "Journalists' Rights",
@@ -47,7 +51,7 @@ export const dict: Record<DictKey, { mr: string; en: string }> = {
     en: 'Events',
   },
   nav_roadmap: {
-    mr: 'रोडमॅप',
+    mr: 'भविष्यकालीन रोडमॅप',
     en: 'Future Roadmap',
   },
   nav_membership: {
@@ -55,8 +59,8 @@ export const dict: Record<DictKey, { mr: string; en: string }> = {
     en: 'Membership',
   },
   nav_helpdesk: {
-    mr: 'मदत कक्ष',
-    en: 'Help Desk',
+    mr: 'हेल्पडेस्क',
+    en: 'Helpdesk',
   },
   nav_gallery: {
     mr: 'गॅलरी',
@@ -147,8 +151,8 @@ export const dict: Record<DictKey, { mr: string; en: string }> = {
     en: 'Membership',
   },
   sec_helpdesk: {
-    mr: 'JOURNALIST HELP DESK — पत्रकार मदत कक्ष',
-    en: 'Journalist Help Desk',
+    mr: 'JOURNALIST & PUBLIC HELPDESK — पत्रकार व जन मदत कक्ष',
+    en: 'Journalist & Public Helpdesk',
   },
   sec_grievance: {
     mr: 'PUBLIC GRIEVANCE — जनतेच्या प्रश्नांना वाचा फोडण्यासाठी',

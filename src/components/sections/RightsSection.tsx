@@ -68,8 +68,8 @@ export function RightsSection({ onHelpdeskClick }: { onHelpdeskClick?: () => voi
                 key={idx}
                 className="flex items-start gap-3 rounded-lg border border-neutral-200 bg-white p-3 shadow-2xs hover:border-neutral-400 transition-colors"
               >
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-neutral-800 text-[10px] font-bold text-white mt-0.5">
-                  ✓
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#172A4A] text-[11px] font-bold text-amber-400 mt-0.5 shadow-2xs">
+                  ★
                 </span>
                 <p className="text-xs sm:text-sm font-medium text-neutral-800">
                   {item[lang]}

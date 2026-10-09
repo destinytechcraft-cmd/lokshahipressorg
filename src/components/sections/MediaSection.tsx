@@ -1,109 +1,86 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { SectionShell, WFCard, WFImage } from '../ui/WireframePrimitives';
+import { SectionShell } from '../ui/WireframePrimitives';
 
-const mediaSectionsData = [
-  {
-    key: 'releases',
-    titleMr: 'प्रेस प्रसिद्धीपत्रके',
-    titleEn: 'Press Releases',
-    descMr: 'महासंघाच्या अधिकृत पत्रकार परिषदा, निवेदने व प्रसिद्धीपत्रके.',
-    descEn: 'Official press conferences, representations and press releases of the federation.',
-  },
-  {
-    key: 'news',
-    titleMr: 'बातम्या व अपडेट्स',
-    titleEn: 'News & Updates',
-    descMr: 'महासंघाच्या विविध उपक्रमांची आणि कार्याची माहिती.',
-    descEn: 'Information regarding various initiatives and activities of the federation.',
-  },
-  {
-    key: 'interviews',
-    titleMr: 'मुलाखती व लेख',
-    titleEn: 'Interviews & Articles',
-    descMr: 'पदाधिकारी, पत्रकार आणि सामाजिक क्षेत्रातील व्यक्तींच्या मुलाखती व लेख.',
-    descEn: 'Interviews and articles of office bearers, journalists, and personalities from social sectors.',
-  },
-  {
-    key: 'speeches',
-    titleMr: 'भाषणे व विचार',
-    titleEn: 'Speeches & Addresses',
-    descMr: 'महासंघाच्या प्रमुख पदाधिकाऱ्यांची भाषणे व विचार.',
-    descEn: 'Speeches and thoughts of key office bearers of the federation.',
-  },
-  {
-    key: 'photos',
-    titleMr: 'फोटो गॅलरी',
-    titleEn: 'Photo Gallery',
-    descMr: 'कार्यक्रमांचे छायाचित्र संग्रह.',
-    descEn: 'Photo collection of events and programs.',
-  },
-  {
-    key: 'videos',
-    titleMr: 'व्हिडिओ गॅलरी',
-    titleEn: 'Video Gallery',
-    descMr: 'महासंघाच्या कार्यक्रमांचे व्हिडिओ.',
-    descEn: 'Videos of the federation’s programs.',
-  },
-];
+const EMBED_URL = 'https://sites.google.com/view/lokshahipressorg/home';
 
 export function MediaSection() {
   const { t, lang } = useLanguage();
-  const [activeFilter, setActiveFilter] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   return (
     <SectionShell id="media" index="11" title={t('sec_media')}>
       <div className="space-y-6 text-left">
-        {/* Category Pills from PDF */}
-        <div className="flex flex-wrap gap-2">
-          {mediaSectionsData.map((cat, idx) => {
-            const isActive = activeFilter === idx;
-            return (
-              <button
-                key={cat.key}
-                type="button"
-                onClick={() => setActiveFilter(idx)}
-                className={`rounded-full border-2 px-3.5 py-1.5 text-xs font-semibold transition-colors cursor-pointer ${
-                  isActive
-                    ? 'border-[#172A4A] bg-[#172A4A] text-white shadow-xs'
-                    : 'border-neutral-300 bg-white text-neutral-700 hover:border-[#172A4A]'
-                }`}
-              >
-                {lang === 'mr' ? cat.titleMr : cat.titleEn}
-              </button>
-            );
-          })}
+        {/* Clean Header Bar */}
+        <div className="p-5 sm:p-6 rounded-2xl border-2 border-[#172A4A]/15 bg-white shadow-xs">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.25em] text-[#E30620]">
+              {lang === 'mr' ? 'अधिकृत डिजिटल न्यूज व मीडिया पोर्टल' : 'OFFICIAL DIGITAL NEWS PORTAL'}
+            </span>
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-600 animate-pulse" />
+              <span>Live Portal</span>
+            </span>
+          </div>
+          <h3 className="text-xl sm:text-2xl font-black text-[#172A4A] tracking-tight">
+            {lang === 'mr' ? 'लोकशाही पत्रकार महासंघ भारत — ताज्या बातम्या व प्रसिद्धीपत्रके' : 'Lokshahi Patrakar Mahasangh Bharat — News & Media Portal'}
+          </h3>
         </div>
 
-        {/* Selected Category Description Highlight */}
-        <div className="rounded-lg border-2 border-neutral-200 bg-neutral-50 p-4">
-          <h4 className="text-sm font-bold text-neutral-900 mb-1">
-            {lang === 'mr' ? mediaSectionsData[activeFilter].titleMr : mediaSectionsData[activeFilter].titleEn}
-          </h4>
-          <p className="text-xs sm:text-sm text-neutral-700">
-            {lang === 'mr' ? mediaSectionsData[activeFilter].descMr : mediaSectionsData[activeFilter].descEn}
-          </p>
-        </div>
+        {/* Auto Layout Embedded Container */}
+        <div className="rounded-3xl border-2 border-[#172A4A]/20 bg-white overflow-hidden shadow-md">
+          {/* Browser-style address bar header */}
+          <div className="flex items-center justify-between px-4 py-2.5 bg-[#172A4A] text-white/90 border-b border-[#172A4A]/20 text-xs">
+            <div className="flex items-center gap-2">
+              <span className="flex gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-red-500/80 inline-block" />
+                <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80 inline-block" />
+                <span className="h-2.5 w-2.5 rounded-full bg-green-500/80 inline-block" />
+              </span>
+              <span className="text-[11px] font-bold text-white/60 ml-2 hidden sm:inline">
+                🔒 HTTPS Secure
+              </span>
+            </div>
 
-        {/* 6 Media Cards Grid */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {mediaSectionsData.map((item, idx) => (
-            <WFCard key={idx} className="p-4 hover:border-neutral-500 transition-colors flex flex-col justify-between">
-              <div>
-                <WFImage
-                  label={lang === 'mr' ? item.titleMr : item.titleEn}
-                  ratio="aspect-video"
-                  className="mb-3"
-                />
-                <h4 className="text-sm font-bold text-neutral-800 mb-1">
-                  {lang === 'mr' ? item.titleMr : item.titleEn}
-                </h4>
-                <p className="text-xs text-neutral-600 leading-relaxed">
-                  {lang === 'mr' ? item.descMr : item.descEn}
+            {/* URL pill */}
+            <div className="flex items-center gap-1 px-3 py-1 bg-white/10 rounded-lg text-[11px] text-white/80 font-mono max-w-xs sm:max-w-md truncate">
+              <span>🌐</span>
+              <span className="truncate">{EMBED_URL}</span>
+            </div>
+
+            <a
+              href={EMBED_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] text-white hover:text-amber-300 font-bold hidden sm:inline"
+            >
+              sites.google.com ↗
+            </a>
+          </div>
+
+          {/* Iframe Viewport */}
+          <div className="relative w-full bg-neutral-100">
+            {/* Loading indicator overlay */}
+            {loading && (
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-white/90 p-6 space-y-3">
+                <div className="h-10 w-10 border-4 border-[#172A4A]/20 border-t-[#E30620] rounded-full animate-spin" />
+                <p className="text-xs sm:text-sm font-bold text-[#172A4A]">
+                  {lang === 'mr'
+                    ? 'लोकशाही पत्रकार महासंघ भारत पोर्टल लोड होत आहे...'
+                    : 'Loading Lokshahi Patrakar Mahasangh Bharat portal...'}
                 </p>
               </div>
-            </WFCard>
-          ))}
+            )}
+
+            <iframe
+              src="/api/embed-site"
+              title="Lokshahi Press Org Portal"
+              onLoad={() => setLoading(false)}
+              className="w-full border-0 h-[850px] sm:h-[950px] md:h-[1050px] transition-all duration-300"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
         </div>
       </div>
     </SectionShell>

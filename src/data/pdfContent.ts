@@ -96,90 +96,110 @@ export const leadershipMembers = [
     roleEn: "National President",
     nameMr: "नाव",
     nameEn: "Name",
-    stateMr: "[राज्य]",
-    stateEn: "[State]",
-    profileMr: "[Short Profile]",
-    profileEn: "[Short Profile]"
+    stateMr: "महाराष्ट्र / भारत",
+    stateEn: "Maharashtra / India",
+    profileMr: "राष्ट्रीय धोरण व सर्वोच्च नेतृत्व",
+    profileEn: "National Policy & Apex Leadership"
   },
   {
-    roleMr: "राष्ट्रीय कार्याध्यक्ष",
+    roleMr: "राष्ट्रीय कार्य अध्यक्ष",
     roleEn: "National Working President",
     nameMr: "नाव",
     nameEn: "Name",
-    stateMr: "[राज्य]",
-    stateEn: "[State]",
-    profileMr: "[Short Profile]",
-    profileEn: "[Short Profile]"
+    stateMr: "महाराष्ट्र / भारत",
+    stateEn: "Maharashtra / India",
+    profileMr: "राष्ट्रीय संघटनात्मक नियोजन व संचालन",
+    profileEn: "National Organisational Planning & Operations"
   },
   {
     roleMr: "राष्ट्रीय उपाध्यक्ष",
     roleEn: "National Vice President",
     nameMr: "नाव",
     nameEn: "Name",
-    stateMr: "[राज्य]",
-    stateEn: "[State]",
-    profileMr: "[Short Profile]",
-    profileEn: "[Short Profile]"
+    stateMr: "महाराष्ट्र / भारत",
+    stateEn: "Maharashtra / India",
+    profileMr: "राष्ट्रीय समन्वय व प्रांतीय संपर्क",
+    profileEn: "National Coordination & State Liaison"
+  },
+  {
+    roleMr: "कायदेशीर सल्लागार",
+    roleEn: "Legal Advisor",
+    nameMr: "नाव",
+    nameEn: "Name",
+    stateMr: "महाराष्ट्र / भारत",
+    stateEn: "Maharashtra / India",
+    profileMr: "पत्रकार हक्क, विधी मार्गदर्शन व संरक्षण",
+    profileEn: "Journalist Rights, Legal Defense & Advisory"
   },
   {
     roleMr: "राष्ट्रीय महामंत्री",
     roleEn: "National General Secretary",
     nameMr: "नाव",
     nameEn: "Name",
-    stateMr: "[राज्य]",
-    stateEn: "[State]",
-    profileMr: "[Short Profile]",
-    profileEn: "[Short Profile]"
+    stateMr: "महाराष्ट्र / भारत",
+    stateEn: "Maharashtra / India",
+    profileMr: "केंद्रीय प्रशासकीय समन्वय व पत्रव्यवहार",
+    profileEn: "Central Administrative Affairs & Liaison"
   },
   {
-    roleMr: "राष्ट्रीय महासचिव",
-    roleEn: "National Secretary General",
-    nameMr: "नाव",
-    nameEn: "Name",
-    stateMr: "[राज्य]",
-    stateEn: "[State]",
-    profileMr: "[Short Profile]",
-    profileEn: "[Short Profile]"
-  },
-  {
-    roleMr: "राष्ट्रीय संघटन मंत्री",
+    roleMr: "राष्ट्रीय संघटनमंत्री",
     roleEn: "National Organizing Secretary",
     nameMr: "नाव",
     nameEn: "Name",
-    stateMr: "[राज्य]",
-    stateEn: "[State]",
-    profileMr: "[Short Profile]",
-    profileEn: "[Short Profile]"
+    stateMr: "महाराष्ट्र / भारत",
+    stateEn: "Maharashtra / India",
+    profileMr: "देशव्यापी संघटन विस्तार व सदस्य संपर्क",
+    profileEn: "Nationwide Network & Membership Expansion"
   },
   {
-    roleMr: "महाराष्ट्र प्रदेशाध्यक्ष",
+    roleMr: "महाराष्ट्र प्रदेश अध्यक्ष",
     roleEn: "Maharashtra State President",
     nameMr: "नाव",
     nameEn: "Name",
-    stateMr: "[राज्य]",
-    stateEn: "[State]",
-    profileMr: "[Short Profile]",
-    profileEn: "[Short Profile]"
+    stateMr: "महाराष्ट्र",
+    stateEn: "Maharashtra",
+    profileMr: "राज्यस्तरीय नेतृत्व, समन्वय व धोरण",
+    profileEn: "State Leadership, Coordination & Policy"
   },
   {
-    roleMr: "राज्य कार्याध्यक्ष",
-    roleEn: "State Working President",
+    roleMr: "महाराष्ट्र प्रदेश उपाध्यक्ष",
+    roleEn: "Maharashtra State Vice President",
     nameMr: "नाव",
     nameEn: "Name",
-    stateMr: "[राज्य]",
-    stateEn: "[State]",
-    profileMr: "[Short Profile]",
-    profileEn: "[Short Profile]"
+    stateMr: "महाराष्ट्र",
+    stateEn: "Maharashtra",
+    profileMr: "विभागीय व जिल्हास्तरीय कार्य समन्वयक",
+    profileEn: "Divisional & District Operations Coordinator"
   },
   {
-    roleMr: "राज्य उपाध्यक्ष",
-    roleEn: "State Vice President",
+    roleMr: "महाराष्ट्र प्रदेश संघटनमंत्री",
+    roleEn: "Maharashtra State Organizing Secretary",
     nameMr: "नाव",
     nameEn: "Name",
-    stateMr: "[राज्य]",
-    stateEn: "[State]",
-    profileMr: "[Short Profile]",
-    profileEn: "[Short Profile]"
+    stateMr: "महाराष्ट्र",
+    stateEn: "Maharashtra",
+    profileMr: "राज्यव्यापी जिल्हा व तालुका संघटन बांधणी",
+    profileEn: "Statewide District & Taluka Organization Builder"
+  },
+  {
+    roleMr: "महाराष्ट्र कार्याध्यक्ष",
+    roleEn: "Maharashtra State Working President",
+    nameMr: "नाव",
+    nameEn: "Name",
+    stateMr: "महाराष्ट्र",
+    stateEn: "Maharashtra",
+    profileMr: "राज्यस्तरीय दैनंदिन कामकाज व कार्यक्रम संचालन",
+    profileEn: "State Day-to-Day Operations & Program Executive"
+  },
+  {
+    roleMr: "मंत्रालय कामकाज समिती अध्यक्ष",
+    roleEn: "Mantralaya Affairs Committee Chairman",
+    nameMr: "नाव",
+    nameEn: "Name",
+    stateMr: "महाराष्ट्र",
+    stateEn: "Maharashtra",
+    profileMr: "मंत्रालय, शासन व प्रशासकीय कामकाज समन्वय",
+    profileEn: "Mantralaya, Government Affairs & Administrative Liaison"
   }
 ];
 

@@ -57,10 +57,12 @@ export default function App() {
   let nameKey: DictKey = 'nav_home';
   if (currentPath === '/about') nameKey = 'nav_about';
   else if (currentPath === '/organisation') nameKey = 'nav_org';
+  else if (currentPath === '/leadership') nameKey = 'nav_leadership';
   else if (currentPath === '/rights') nameKey = 'nav_rights';
   else if (currentPath === '/social-work') nameKey = 'nav_social';
   else if (currentPath === '/media') nameKey = 'nav_media';
   else if (currentPath === '/events') nameKey = 'nav_events';
+  else if (currentPath === '/roadmap') nameKey = 'nav_roadmap';
   else if (currentPath === '/membership') nameKey = 'nav_membership';
   else if (currentPath === '/help-desk') nameKey = 'nav_helpdesk';
   else if (currentPath === '/gallery') nameKey = 'nav_gallery';
@@ -89,12 +91,19 @@ export default function App() {
           </>
         );
 
+      case '/leadership':
+        return (
+          <>
+            <PageHero titleKey="nav_leadership" onNavigate={navigate} />
+            <LeadershipSection />
+          </>
+        );
+
       case '/rights':
         return (
           <>
             <PageHero titleKey="nav_rights" onNavigate={navigate} />
             <RightsSection onHelpdeskClick={() => navigate('/help-desk')} />
-            <GrievanceSection onSubmitIssueClick={() => setIssueModalOpen(true)} />
           </>
         );
 
@@ -104,7 +113,6 @@ export default function App() {
             <PageHero titleKey="nav_social" onNavigate={navigate} />
             <SocialSection />
             <AchievementsSection />
-            <GallerySection />
           </>
         );
 
@@ -122,8 +130,15 @@ export default function App() {
           <>
             <PageHero titleKey="nav_events" onNavigate={navigate} />
             <EventsSection />
-            <MediaSection />
             <GallerySection />
+          </>
+        );
+
+      case '/roadmap':
+        return (
+          <>
+            <PageHero titleKey="nav_roadmap" onNavigate={navigate} />
+            <RoadmapSection />
           </>
         );
 
@@ -167,25 +182,13 @@ export default function App() {
         // Matching exact structure from PDF Pages 18 & 19
         return (
           <>
-            <Hero
+            <Hero />
+            <HeroIntroSection
               onJoinClick={() => setMembershipModalOpen(true)}
               onVoiceClick={() => setIssueModalOpen(true)}
             />
-            <HeroIntroSection />
             <MediaCoverage />
-            <AboutSection />
-            <OrganisationSection />
-            <RightsSection onHelpdeskClick={() => navigate('/help-desk')} />
-            <SocialSection />
             <OrgNetworkSection />
-            <RoadmapSection />
-            <MediaSection />
-            <EventsSection />
-            <HelpDeskSection />
-            <MembershipSection onJoinClick={() => setMembershipModalOpen(true)} />
-            <GrievanceSection onSubmitIssueClick={() => setIssueModalOpen(true)} />
-            <LeadershipSection />
-            <ContactSection />
           </>
         );
     }
