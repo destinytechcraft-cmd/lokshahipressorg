@@ -177,16 +177,18 @@ export default function App() {
 
       case '/':
       default:
-        // Matching exact structure from PDF Pages 18 & 19
+        // Matching exact structure with MediaCoverage as the final section right above the footer
         return (
           <>
             <Hero />
             <HeroIntroSection
               onJoinClick={() => setMembershipModalOpen(true)}
-              onVoiceClick={() => setIssueModalOpen(true)}
+              onHelpDeskClick={() => navigate('/help-desk')}
+              onVoiceClick={() => navigate('/help-desk')}
+              onKnowMoreClick={() => navigate('/about')}
             />
-            <MediaCoverage />
             <OrgNetworkSection />
+            <MediaCoverage />
           </>
         );
     }

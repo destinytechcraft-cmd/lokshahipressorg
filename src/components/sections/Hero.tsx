@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { WFButton } from '../ui/WireframePrimitives';
 import { GOOGLE_FORM_LINKS } from '../../config/forms';
 
 const heroBadges = [
@@ -10,14 +9,6 @@ const heroBadges = [
   { mr: 'भारतभर कार्यक्षेत्र', en: 'Pan-India Reach', color: 'border-[#287A18]/50 text-[#86EFAC] bg-[#287A18]/20' },
 ];
 
-export interface BackgroundSlide {
-  id: number;
-  imageSrc: string;
-  titleMr: string;
-  titleEn: string;
-  themeGradient: string;
-}
-
 export function Hero({
   onJoinClick,
   onVoiceClick,
@@ -26,81 +17,32 @@ export function Hero({
   onVoiceClick?: () => void;
 }) {
   const { t, lang } = useLanguage();
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  // 4 Background Slides with the 4 user-provided photos
-  const backgroundSlides: BackgroundSlide[] = [
-    {
-      id: 1,
-      imageSrc: '/hero-1.jpg',
-      titleMr: 'राष्ट्रीय नेतृत्व व मार्गदर्शन',
-      titleEn: 'National Leadership & Guidance',
-      themeGradient: 'from-[#0B1528] via-[#172A4A] to-[#1E3A5F]',
-    },
-    {
-      id: 2,
-      imageSrc: '/hero-2.jpg',
-      titleMr: 'लोकशाही, विचार व संवाद',
-      titleEn: 'Democratic Dialogue & Vision',
-      themeGradient: 'from-[#17172A] via-[#1B2A4A] to-[#0A192F]',
-    },
-    {
-      id: 3,
-      imageSrc: '/hero-3.jpg',
-      titleMr: 'पत्रकार कल्याण व जनहित धोरण',
-      titleEn: 'Press Welfare & Public Interest Policies',
-      themeGradient: 'from-[#1A1829] via-[#172A4A] to-[#12233C]',
-    },
-    {
-      id: 4,
-      imageSrc: '/hero-4.jpg',
-      titleMr: 'प्रशासकीय कार्य व संघटनात्मक वाटचाल',
-      titleEn: 'Administrative Governance & Progress',
-      themeGradient: 'from-[#0B1A30] via-[#172A4A] to-[#1B355A]',
-    },
-  ];
-
-  // Auto-scroll slides every 3.5 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % backgroundSlides.length);
-    }, 3500);
-    return () => clearInterval(timer);
-  }, [backgroundSlides.length]);
 
   return (
-    <section className="relative w-full flex items-center justify-start overflow-hidden border-b-4 border-[#E30620] min-h-[380px] sm:min-h-[420px] md:min-h-[460px] lg:min-h-[500px]">
-      {/* 4 Auto-scrolling background image layers with smooth crossfade */}
+    <section className="relative w-full flex items-center justify-start overflow-hidden border-b-4 border-[#E30620] bg-gradient-to-br from-[#070D1E] via-[#0E1B35] to-[#172A4A] min-h-[380px] sm:min-h-[420px] md:min-h-[460px] lg:min-h-[500px]">
+      {/* Decorative Background Elements */}
       <div className="absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0">
-        {backgroundSlides.map((slide, idx) => {
-          const isActive = idx === currentSlide;
-          return (
-            <div
-              key={slide.id}
-              className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-                isActive ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <img
-                src={slide.imageSrc}
-                alt={slide.titleEn}
-                className="w-full h-full object-cover object-[center_20%] scale-105 transition-transform duration-[4000ms] ease-out"
-              />
-            </div>
-          );
-        })}
+        {/* Subtle radial ambient spotlights */}
+        <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-[#E30620]/15 blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 -right-20 w-96 h-96 rounded-full bg-[#2855A5]/20 blur-3xl pointer-events-none" />
 
-        {/* Cinematic dark overlay balancing photo visibility with crisp text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0F1C32]/75 via-[#172A4A]/70 to-[#0B1528]/80 backdrop-blur-[1px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#0F1C32]/40 to-[#060D1A]/75" />
-        {/* Left-weighted gradient providing deep contrast behind left-aligned content */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071120]/85 via-[#0A1628]/50 to-transparent" />
+        {/* Large watermark emblem */}
+        <div className="absolute right-4 sm:right-12 lg:right-20 top-1/2 -translate-y-1/2 opacity-10 sm:opacity-15 pointer-events-none">
+          <img
+            src="/symbol-transparent.png"
+            alt=""
+            className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 object-contain"
+          />
+        </div>
+
+        {/* Clean subtle pattern overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.04]" />
       </div>
 
       {/* Hero Foreground Content - Landscape Banner Layout */}
       <div className="relative z-10 w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-14 flex flex-col items-start text-left mr-auto">
         <div className="flex flex-col items-start text-left max-w-4xl lg:max-w-5xl">
-          {/* Top Heading Eyebrow - Background colors removed, enlarged font */}
+          {/* Top Heading Eyebrow */}
           <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-3 mb-3 sm:mb-4">
             <span className="text-sm sm:text-base md:text-lg font-black uppercase tracking-wide text-white drop-shadow-sm">
               {lang === 'mr' ? 'लोकशाही पत्रकार महासंघ भारत' : 'LOKSHAHI PATRAKAR MAHASANGH BHARAT'}
@@ -111,7 +53,7 @@ export function Hero({
             </span>
           </div>
 
-          {/* Main Headline - Extra Large Headline */}
+          {/* Main Headline */}
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight sm:leading-tight text-white tracking-tight drop-shadow-xl text-left">
             {lang === 'mr' ? (
               <>
@@ -124,12 +66,17 @@ export function Hero({
             )}
           </h1>
 
-          {/* Values Strip */}
-          <div className="mt-2.5 flex flex-wrap items-center justify-start gap-x-2 gap-y-1 text-xs sm:text-sm font-black text-[#E6530C] uppercase tracking-[0.2em] text-left">
-            <span>{t('values')}</span>
+          {/* Values Strip - Clean Crisp White with Red Separators */}
+          <div className="mt-3 flex flex-wrap items-center justify-start gap-x-2.5 gap-y-1 text-xs sm:text-sm md:text-base font-black text-white uppercase tracking-[0.22em] text-left drop-shadow-md">
+            {t('values').split('•').map((item, i, arr) => (
+              <React.Fragment key={i}>
+                <span className="text-white">{item.trim()}</span>
+                {i < arr.length - 1 && <span className="text-[#E30620] font-black select-none">•</span>}
+              </React.Fragment>
+            ))}
           </div>
 
-          {/* Strength Badges - 4 Badges */}
+          {/* Strength Badges */}
           <div className="mt-5 sm:mt-6 flex flex-wrap items-center justify-start gap-2 sm:gap-3 max-w-2xl">
             {heroBadges.map((badge, idx) => (
               <span
@@ -141,21 +88,6 @@ export function Hero({
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Slide Navigation Dots in bottom right */}
-      <div className="absolute bottom-4 right-4 sm:bottom-5 sm:right-8 z-20 flex items-center gap-1.5 sm:gap-2 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15">
-        {backgroundSlides.map((slide, idx) => (
-          <button
-            key={slide.id}
-            type="button"
-            onClick={() => setCurrentSlide(idx)}
-            aria-label={`Go to slide ${idx + 1}`}
-            className={`h-2 rounded-full transition-all cursor-pointer ${
-              idx === currentSlide ? 'w-5 sm:w-6 bg-[#E30620]' : 'w-2 bg-white/60 hover:bg-white'
-            }`}
-          />
-        ))}
       </div>
 
       {/* Tricolor bottom indicator band */}
@@ -174,10 +106,14 @@ export function Hero({
  */
 export function HeroIntroSection({
   onJoinClick,
+  onHelpDeskClick,
   onVoiceClick,
+  onKnowMoreClick,
 }: {
   onJoinClick?: () => void;
+  onHelpDeskClick?: () => void;
   onVoiceClick?: () => void;
+  onKnowMoreClick?: () => void;
 }) {
   const { t, lang } = useLanguage();
 
@@ -211,28 +147,79 @@ export function HeroIntroSection({
                 ? 'आज महासंघ देशभरातील प्रिंट मीडिया, इलेक्ट्रॉनिक मीडिया, डिजिटल मीडिया, वृत्तसंस्था, नियतकालिके आणि स्वतंत्र पत्रकारांना एका सक्षम व्यासपीठावर एकत्र आणत पत्रकारांच्या हक्कांचे संरक्षण, व्यावसायिक सक्षमीकरण आणि जबाबदार पत्रकारितेचा प्रसार करण्यासाठी कटिबद्ध आहे.'
                 : 'Today, the federation unites print media, electronic broadcast media, digital portals, news agencies, periodicals, and independent journalists onto an empowered platform, committed to protecting journalists’ rights, ensuring professional empowerment, and advancing responsible journalism.'}
             </p>
-          </div>
 
-          {/* Action Buttons: JOIN US & RAISE YOUR VOICE - Moved after the intro paragraph */}
-          <div className="mt-7 pt-5 border-t border-[#172A4A]/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3 sm:gap-4 w-full sm:w-auto">
-            <WFButton
-              variant="solid"
-              href={GOOGLE_FORM_LINKS.joinMembership}
-              target="_blank"
-              onClick={onJoinClick}
-              className="w-full sm:w-auto min-h-[44px] px-7 py-3 text-sm sm:text-base font-black shadow-md bg-[#E30620] hover:bg-[#c7051b] text-white tracking-wide"
-            >
-              {t('btn_join')}
-            </WFButton>
-            <WFButton
-              variant="outline"
-              href={GOOGLE_FORM_LINKS.raiseVoice}
-              target="_blank"
-              onClick={onVoiceClick}
-              className="w-full sm:w-auto min-h-[44px] px-7 py-3 text-sm sm:text-base font-black border-2 border-[#172A4A] text-[#172A4A] hover:bg-[#172A4A] hover:text-white tracking-wide transition-colors"
-            >
-              {t('btn_voice')}
-            </WFButton>
+            {/* Action Buttons: JOIN US & JOURNALIST & PUBLIC HELPDESK - Placed right after the paragraph */}
+            <div className="pt-2 pb-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3 sm:gap-4 w-full sm:w-auto">
+              <a
+                href={GOOGLE_FORM_LINKS.joinMembership}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={onJoinClick}
+                className="w-full sm:w-auto min-h-[46px] px-8 py-3 inline-flex items-center justify-center rounded-full bg-[#E30620] hover:bg-[#c7051b] text-white text-sm sm:text-base font-black tracking-wide shadow-md hover:shadow-lg transition-all duration-150 cursor-pointer select-none active:scale-[0.98] text-center"
+              >
+                {t('btn_join')}
+              </a>
+              <a
+                href="/help-desk"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onHelpDeskClick) {
+                    onHelpDeskClick();
+                  } else if (onVoiceClick) {
+                    onVoiceClick();
+                  }
+                }}
+                className="w-full sm:w-auto min-h-[46px] px-6 sm:px-7 py-2.5 sm:py-3 inline-flex items-center justify-center gap-2.5 rounded-full border-2 border-emerald-600 bg-white hover:bg-emerald-50 text-emerald-800 hover:text-emerald-950 font-black text-xs sm:text-sm tracking-wide shadow-xs hover:shadow-md transition-all cursor-pointer text-center"
+              >
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 flex-shrink-0 animate-pulse" />
+                <span>Journalist & Public Helpdesk</span>
+                {lang === 'mr' && (
+                  <span className="text-[11px] font-bold text-emerald-700 hidden lg:inline">
+                    (पत्रकार व जन मदत कक्ष)
+                  </span>
+                )}
+              </a>
+            </div>
+
+            {/* लोकशाही परिवार — पत्रकारांचे एक राष्ट्रीय कुटुंब */}
+            <div className="rounded-2xl border border-[#172A4A]/15 bg-white p-5 sm:p-6 shadow-xs text-left">
+              <h4 className="flex items-center gap-2 text-base sm:text-lg font-black text-[#172A4A] mb-2.5">
+                <span className="text-lg">🏛️</span>
+                <span>
+                  {lang === 'mr'
+                    ? 'लोकशाही परिवार — पत्रकारांचे एक राष्ट्रीय कुटुंब'
+                    : 'Lokshahi Pariwar — A National Family of Journalists'}
+                </span>
+              </h4>
+              <p className="text-xs sm:text-sm text-[#172A4A]/85 leading-relaxed font-medium">
+                {lang === 'mr' ? (
+                  <>
+                    <span className="text-[#E30620] font-black">लोक</span>शाही पत्रकार महासंघ भारत ही केवळ पत्रकारांची संघटना नसून पत्रकार, समाजसेवक आणि लोकशाही मूल्यांवर विश्वास ठेवणाऱ्या नागरिकांचे एक संयुक्त राष्ट्रीय कुटुंब आहे. समाजहित, पत्रकारांचे संरक्षण आणि समाजसेवकांच्या कल्याणाचा विचार करून महासंघ विविध सामाजिक, शैक्षणिक आणि जनहिताचे उपक्रम सातत्याने राबवितो.
+                  </>
+                ) : (
+                  <>
+                    <span className="text-[#E30620] font-black">Lok</span>shahi Patrakar Mahasangh Bharat is not merely an association of journalists, but a united national family of journalists, social workers, and citizens who believe in democratic values. With a focus on public interest, journalist protection, and welfare of social workers, the federation consistently carries out various social, educational, and public welfare initiatives.
+                  </>
+                )}
+              </p>
+            </div>
+
+            {/* निर्भय पत्रकारितेच्या रक्षणाचा ठाम निर्धार */}
+            <div className="rounded-2xl border border-[#172A4A]/15 bg-white p-5 sm:p-6 shadow-xs border-t-4 border-t-[#E30620] text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-base text-sky-600">🛡️</span>
+                <span className="text-xs sm:text-sm font-bold text-[#E30620]">
+                  {lang === 'mr'
+                    ? 'निर्भय पत्रकारितेच्या रक्षणाचा ठाम निर्धार :'
+                    : 'Firm Commitment to Protecting Fearless Journalism :'}
+                </span>
+              </div>
+              <blockquote className="text-xs sm:text-sm text-[#172A4A]/90 italic leading-relaxed font-medium">
+                {lang === 'mr'
+                  ? '“जेव्हा एखादा पत्रकार धाडसी शोधपत्रकारिता करून सत्य जनतेसमोर आणतो, तेव्हा अनेकदा त्याच्यावर दबाव, धमक्या, खोटे गुन्हे किंवा अन्याय होण्याची शक्यता निर्माण होते. अशा प्रत्येक प्रसंगी लोकशाही पत्रकार महासंघ भारत संबंधित पत्रकाराच्या न्याय, संरक्षण आणि सन्मानासाठी ठामपणे त्यांच्या पाठीशी उभा राहतो. आमचा ठाम विश्वास आहे की निर्भय पत्रकारितेचे संरक्षण म्हणजेच लोकशाहीचे संरक्षण.”'
+                  : '“When a journalist undertakes daring investigative journalism to bring truth before the public, they often face pressure, threats, false cases, or injustice. On every such occasion, Lokshahi Patrakar Mahasangh Bharat stands firmly behind them for their justice, protection, and dignity. We firmly believe that defending fearless journalism is defending democracy itself.”'}
+              </blockquote>
+            </div>
           </div>
         </div>
       </div>
