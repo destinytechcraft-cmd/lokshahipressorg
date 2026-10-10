@@ -147,8 +147,6 @@ export default function App() {
           <>
             <PageHero titleKey="nav_membership" onNavigate={navigate} />
             <MembershipSection onJoinClick={() => setMembershipModalOpen(true)} />
-            <StatsSection />
-            <GrievanceSection onSubmitIssueClick={() => setIssueModalOpen(true)} />
           </>
         );
 
