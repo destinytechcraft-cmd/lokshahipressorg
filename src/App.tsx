@@ -178,9 +178,9 @@ export default function App() {
         // Matching exact structure with MediaCoverage as the final section right above the footer
         return (
           <>
-            <Hero />
+            <Hero onJoinClick={() => navigate('/membership')} />
             <HeroIntroSection
-              onJoinClick={() => setMembershipModalOpen(true)}
+              onJoinClick={() => navigate('/membership')}
               onHelpDeskClick={() => navigate('/help-desk')}
               onVoiceClick={() => navigate('/help-desk')}
               onKnowMoreClick={() => navigate('/about')}

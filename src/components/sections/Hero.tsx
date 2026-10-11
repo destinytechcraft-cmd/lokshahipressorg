@@ -228,10 +228,13 @@ export function HeroIntroSection({
             {/* Action Buttons: JOIN US (Red) & JOURNALIST & PUBLIC HELPDESK (Green) */}
             <div className="pt-2 pb-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3 sm:gap-4 w-full sm:w-auto">
               <a
-                href={GOOGLE_FORM_LINKS.joinMembership}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={onJoinClick}
+                href="/membership"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onJoinClick) {
+                    onJoinClick();
+                  }
+                }}
                 className="w-full sm:w-auto min-h-[46px] px-8 py-3 inline-flex items-center justify-center rounded-full bg-[#E30620] hover:bg-[#c7051b] text-white text-sm sm:text-base font-black tracking-wide shadow-md hover:shadow-lg transition-all duration-150 cursor-pointer select-none active:scale-[0.98] text-center"
               >
                 {t('btn_join')}
