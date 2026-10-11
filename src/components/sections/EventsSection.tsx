@@ -7,7 +7,7 @@ export function EventsSection() {
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="events" index="12" title={t('sec_events')}>
+    <SectionShell id="events" title={t('sec_events')}>
       <div className="space-y-6 text-left">
         {/* Intro from PDF Page 13 */}
         <div className="rounded-xl border-2 border-neutral-300 bg-neutral-50 p-6">

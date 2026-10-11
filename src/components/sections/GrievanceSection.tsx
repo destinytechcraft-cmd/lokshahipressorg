@@ -14,7 +14,7 @@ export function GrievanceSection({ onSubmitIssueClick }: { onSubmitIssueClick?: 
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="grievance" index="15" title={t('sec_grievance')}>
+    <SectionShell id="grievance" title={t('sec_grievance')}>
       <div className="flex flex-col items-center gap-5 rounded-2xl border-2 border-neutral-300 bg-neutral-50 p-6 sm:p-10 text-center max-w-4xl mx-auto">
         <h3 className="text-xl sm:text-2xl font-black text-neutral-900 tracking-tight">
           {lang === 'mr' ? 'जनतेच्या प्रश्नांना वाचा फोडण्यासाठी' : 'Voicing the Issues of the Public'}

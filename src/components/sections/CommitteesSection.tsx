@@ -21,7 +21,7 @@ export function CommitteesSection() {
   });
 
   return (
-    <SectionShell id="committees" index="6" title={t('sec_committees')}>
+    <SectionShell id="committees" title={t('sec_committees')}>
       <div className="space-y-6 text-left">
         {/* Intro from PDF Page 7 */}
         <div className="rounded-xl border-2 border-neutral-300 bg-neutral-50 p-6">

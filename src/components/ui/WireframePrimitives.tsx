@@ -175,35 +175,28 @@ export function WFInput({
 
 export function SectionShell({
   id,
-  index,
   title,
+  icon,
   children,
   className,
 }: {
   id?: string;
   index?: string;
-  title: string;
+  title: React.ReactNode;
+  icon?: React.ReactNode;
   children: React.ReactNode;
   className?: string;
 }) {
-  const { lang } = useLanguage();
   return (
     <section id={id} className={cn('border-b border-dashed border-[#172A4A]/20 py-10 sm:py-12', className)}>
       <div className="mx-auto w-full max-w-6xl px-4">
         <div className="mb-6 sm:mb-8 flex items-center justify-between gap-2 sm:gap-3 flex-wrap sm:flex-nowrap">
           <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-            {index ? (
-              <span className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-[#E30620] px-1.5 text-xs font-black text-white shadow-2xs">
-                {index}
-              </span>
-            ) : null}
-            <h2 className="text-base sm:text-2xl font-black tracking-tight text-[#172A4A] min-w-0 break-words leading-tight">
+            {icon}
+            <h2 className="text-base sm:text-2xl font-black tracking-tight text-[#172A4A] min-w-0 break-words leading-tight flex items-center gap-2">
               {title}
             </h2>
           </div>
-          <span className="shrink-0 text-[10px] font-bold uppercase tracking-[0.25em] text-[#172A4A]/50 bg-[#172A4A]/5 px-2.5 py-1 rounded border border-[#172A4A]/10">
-            {lang === 'mr' ? 'विभाग' : 'SECTION'}
-          </span>
         </div>
         {children}
       </div>

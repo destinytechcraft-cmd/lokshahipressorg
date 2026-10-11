@@ -186,13 +186,13 @@ export function Header({
                 onClick={() => handleNavClick(item.href)}
                 aria-current={isActive ? 'page' : undefined}
                 className={cn(
-                  'rounded-md px-2.5 py-1 text-xs font-bold transition-all cursor-pointer select-none',
+                  'rounded-md px-2.5 py-1 text-xs font-bold transition-all cursor-pointer select-none inline-flex items-center gap-1.5',
                   isActive
                     ? 'bg-[#172A4A] text-white shadow-2xs'
                     : 'text-[#172A4A]/80 hover:bg-[#172A4A]/10 hover:text-[#E30620]'
                 )}
               >
-                {t(item.key)}
+                <span>{t(item.key)}</span>
               </button>
             );
           })}
@@ -212,13 +212,13 @@ export function Header({
                     onClick={() => handleNavClick(item.href)}
                     aria-current={isActive ? 'page' : undefined}
                     className={cn(
-                      'block w-full text-left rounded-lg px-3.5 py-2.5 text-sm font-bold transition-colors cursor-pointer',
+                      'flex items-center gap-2 w-full text-left rounded-lg px-3.5 py-2.5 text-sm font-bold transition-colors cursor-pointer',
                       isActive
                         ? 'bg-[#172A4A] text-white'
                         : 'text-[#172A4A] hover:bg-[#F7F3EC] hover:text-[#E30620]'
                     )}
                   >
-                    {t(item.key)}
+                    <span>{t(item.key)}</span>
                   </button>
                 </li>
               );

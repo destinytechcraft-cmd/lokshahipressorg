@@ -41,7 +41,7 @@ export function StatsSection() {
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="stats" index="1" title={t('sec_stats')}>
+    <SectionShell id="stats" title={t('sec_stats')}>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {statsData.map((item, idx) => (
           <WFCard

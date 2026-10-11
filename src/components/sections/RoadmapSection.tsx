@@ -7,7 +7,7 @@ export function RoadmapSection() {
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="roadmap" index="10" title={t('sec_roadmap')}>
+    <SectionShell id="roadmap" title={t('sec_roadmap')}>
       <div className="space-y-6 text-left">
         {/* Intro from PDF Page 11 */}
         <div className="rounded-xl border-2 border-neutral-300 bg-neutral-50 p-6">

@@ -39,7 +39,7 @@ export function AchievementsSection() {
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="achievements" index="9" title={t('sec_achievements')}>
+    <SectionShell id="achievements" title={t('sec_achievements')}>
       <div className="space-y-6 text-left">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {achievementsList.map((item, idx) => (

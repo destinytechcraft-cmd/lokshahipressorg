@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { SectionShell, WFCard, WFImage } from '../ui/WireframePrimitives';
+import { SectionShell, WFCard } from '../ui/WireframePrimitives';
+import { IndiaNetworkMap } from '../common/IndiaNetworkMap';
 
 const networkStats = [
   { mr: '७,६००+ सदस्य', en: '7,600+ Members', subMr: 'सदस्यांचे राष्ट्रीय जाळे', subEn: 'National Network', color: 'text-[#172A4A]', bg: 'bg-[#172A4A]/5', border: 'border-[#172A4A]/20' },
@@ -25,23 +26,19 @@ export function OrgNetworkSection() {
 
         <div className="grid gap-6 md:grid-cols-2 md:items-center">
           <div className="relative">
-            <WFImage
-              label={lang === 'mr' ? 'भारतभर संघटनात्मक जाळे' : 'PAN-INDIA NETWORK'}
-              ratio="aspect-[4/3]"
-              className="shadow-sm border-2 border-[#172A4A]/20"
-            />
+            <IndiaNetworkMap />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="flex flex-col gap-3 sm:gap-3.5 justify-center">
             {networkStats.map((item, idx) => (
               <WFCard
                 key={idx}
-                className={`text-center py-6 shadow-xs hover:border-current transition-colors ${item.bg} ${item.border}`}
+                className={`text-center py-4 sm:py-5 px-4 shadow-xs hover:border-current transition-all rounded-xl ${item.bg} ${item.border} flex flex-col items-center justify-center`}
               >
                 <div className={`text-xl sm:text-2xl font-black ${item.color}`}>
                   {item[lang]}
                 </div>
-                <div className="mt-1 text-[11px] font-bold text-[#172A4A]/80">
+                <div className="mt-1 text-xs font-bold text-[#172A4A]/80">
                   {lang === 'mr' ? item.subMr : item.subEn}
                 </div>
               </WFCard>

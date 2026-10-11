@@ -58,7 +58,7 @@ export function VisionSection() {
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="vision" index="4" title={t('sec_vision')}>
+    <SectionShell id="vision" title={t('sec_vision')}>
       <div className="space-y-6 text-left">
         {/* Mission Statement */}
         <div className="rounded-xl border-2 border-neutral-300 bg-neutral-900 text-white p-6 sm:p-8">

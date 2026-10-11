@@ -37,7 +37,7 @@ export function RightsSection({ onHelpdeskClick }: { onHelpdeskClick?: () => voi
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="rights" index="7" title={t('sec_rights')}>
+    <SectionShell id="rights" title={t('sec_rights')}>
       <div className="grid gap-8 lg:grid-cols-12 lg:items-start text-left">
         {/* Left Column: Context & Bullet Points from PDF Page 9 */}
         <div className="space-y-4 lg:col-span-7">

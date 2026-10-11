@@ -7,7 +7,7 @@ export function LeadershipSection() {
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="leadership" index="16" title={t('sec_leadership')}>
+    <SectionShell id="leadership" title={t('sec_leadership')}>
       <div className="space-y-8 text-left">
         {/* Intro Banner from PDF Page 15 */}
         <div className="rounded-2xl border-2 border-[#172A4A]/20 bg-white p-6 sm:p-8 shadow-xs">

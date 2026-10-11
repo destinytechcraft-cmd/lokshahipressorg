@@ -9,7 +9,15 @@ export function MediaSection() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <SectionShell id="media" index="11" title={t('sec_media')}>
+    <SectionShell
+      id="media"
+      title={t('sec_media')}
+      icon={
+        <span className="flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-[#E30620] text-white text-xs sm:text-sm font-black shadow-xs shrink-0 select-none">
+          ★
+        </span>
+      }
+    >
       <div className="space-y-6 text-left">
         {/* Clean Header Bar */}
         <div className="p-5 sm:p-6 rounded-2xl border-2 border-[#172A4A]/15 bg-white shadow-xs">

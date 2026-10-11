@@ -112,7 +112,6 @@ export default function App() {
           <>
             <PageHero titleKey="nav_social" onNavigate={navigate} />
             <SocialSection />
-            <AchievementsSection />
           </>
         );
 
@@ -130,7 +129,6 @@ export default function App() {
           <>
             <PageHero titleKey="nav_events" onNavigate={navigate} />
             <EventsSection />
-            <GallerySection />
           </>
         );
 

@@ -17,7 +17,7 @@ export function SocialSection() {
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="social" index="8" title={t('sec_social')}>
+    <SectionShell id="social" title={t('sec_social')}>
       <div className="space-y-6 text-left">
         {/* Main Text Content strictly from PDF Page 10 */}
         <div className="grid gap-6 lg:grid-cols-12 lg:items-center">

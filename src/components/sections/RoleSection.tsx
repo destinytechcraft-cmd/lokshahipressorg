@@ -37,7 +37,7 @@ export function RoleSection() {
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="role" index="3" title={t('sec_role')}>
+    <SectionShell id="role" title={t('sec_role')}>
       <div className="space-y-6 text-left">
         {/* Role Headline & Intro */}
         <div className="rounded-xl border-2 border-neutral-300 bg-neutral-50 p-6">

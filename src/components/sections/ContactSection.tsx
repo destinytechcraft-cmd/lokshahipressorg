@@ -8,7 +8,7 @@ export function ContactSection() {
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="contact" index="17" title={t('sec_contact')}>
+    <SectionShell id="contact" title={t('sec_contact')}>
       <div className="space-y-8 text-left">
         {/* Header from PDF Page 16 */}
         <div className="rounded-2xl border-2 border-[#172A4A]/20 bg-white p-6 sm:p-8 shadow-xs">

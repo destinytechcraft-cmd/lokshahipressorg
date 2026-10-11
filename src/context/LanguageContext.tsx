@@ -59,8 +59,8 @@ export const dict: Record<DictKey, { mr: string; en: string }> = {
     en: 'Membership',
   },
   nav_helpdesk: {
-    mr: 'हेल्पडेस्क',
-    en: 'Helpdesk',
+    mr: 'पत्रकार हेल्पडेस्क',
+    en: 'Journalist Helpdesk',
   },
   nav_gallery: {
     mr: 'गॅलरी',
@@ -140,7 +140,7 @@ export const dict: Record<DictKey, { mr: string; en: string }> = {
   },
   sec_media: {
     mr: 'MEDIA SECTION',
-    en: 'Media Section',
+    en: 'MEDIA SECTION',
   },
   sec_events: {
     mr: 'EVENTS — कार्यक्रम आणि उपक्रम',

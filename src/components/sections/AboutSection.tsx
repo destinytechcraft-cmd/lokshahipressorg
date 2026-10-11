@@ -7,7 +7,7 @@ export function AboutSection({ isHome = false }: { isHome?: boolean }) {
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="about" index="2" title={t('sec_about')}>
+    <SectionShell id="about" title={t('sec_about')}>
       <div className="grid gap-10 lg:grid-cols-12 lg:items-start text-left">
         {/* Left Column: Authoritative Editorial Story */}
         <div className="space-y-6 lg:col-span-7 text-[#172A4A]">

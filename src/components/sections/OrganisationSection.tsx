@@ -79,7 +79,7 @@ export function OrganisationSection() {
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="organisation" index="5" title={t('sec_org')}>
+    <SectionShell id="organisation" title={t('sec_org')}>
       <div className="space-y-8 text-left">
         {/* Intro Banner */}
         <div className="rounded-xl border-2 border-neutral-300 bg-neutral-50 p-6">
@@ -129,12 +129,6 @@ export function OrganisationSection() {
 
         {/* 3-Row Dashboard Table */}
         <WFCard>
-          <div className="mb-3 flex items-center justify-between">
-            <h4 className="text-sm font-bold text-neutral-900">
-              {lang === 'mr' ? 'स्तरनिहाय कार्यमंडळ आढावा' : 'Tier-Wise Executive Committee Overview'}
-            </h4>
-          </div>
-
           <div className="overflow-x-auto rounded-lg border border-neutral-200">
             <table className="w-full text-left text-xs sm:text-sm text-neutral-700 border-collapse">
               <thead>

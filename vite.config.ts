@@ -35,6 +35,7 @@ export default defineConfig(() => {
               res.end('Failed to proxy site');
             }
           });
+
         },
       },
     ],

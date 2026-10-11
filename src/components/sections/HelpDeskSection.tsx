@@ -7,7 +7,7 @@ export function HelpDeskSection() {
   const { t, lang } = useLanguage();
 
   return (
-    <SectionShell id="helpdesk" index="14" title={t('sec_helpdesk')}>
+    <SectionShell id="helpdesk" title={t('sec_helpdesk')}>
       <div className="space-y-6 text-left">
         {/* Banner from PDF Page 14 */}
         <div className="rounded-2xl border-2 border-[#172A4A]/20 bg-white p-6 sm:p-8 shadow-xs">
