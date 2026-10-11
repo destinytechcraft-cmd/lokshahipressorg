@@ -62,9 +62,6 @@ export function VisionSection() {
       <div className="space-y-6 text-left">
         {/* Mission Statement */}
         <div className="rounded-xl border-2 border-neutral-300 bg-neutral-900 text-white p-6 sm:p-8">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400 block mb-2">
-            {lang === 'mr' ? 'ध्येय विधान' : 'Vision Statement'}
-          </span>
           <p className="text-base sm:text-lg font-bold leading-relaxed">
             {lang === 'mr'
               ? 'भारतभरातील पत्रकारांना एकजूट, सक्षम, सुरक्षित आणि स्वाभिमानी संघटनात्मक व्यासपीठ उपलब्ध करून देणे.'

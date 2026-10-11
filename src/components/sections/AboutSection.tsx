@@ -46,8 +46,8 @@ export function AboutSection({ isHome = false }: { isHome?: boolean }) {
           {!isHome && (
             <>
               {/* Lokshahi Family Card */}
-              <div className="rounded-2xl border-2 border-black bg-white p-6 shadow-xs text-left">
-                <h3 className="text-base sm:text-lg font-black text-black tracking-tight mb-2.5">
+              <div className="rounded-2xl border-2 border-black bg-white p-5 sm:p-5.5 shadow-xs text-left">
+                <h3 className="text-base sm:text-lg font-black text-black tracking-tight mb-2">
                   {lang === 'mr'
                     ? 'लोकशाही परिवार — पत्रकारांचे एक राष्ट्रीय कुटुंब'
                     : 'Lokshahi Family — A National Journalist Community'}
@@ -55,13 +55,13 @@ export function AboutSection({ isHome = false }: { isHome?: boolean }) {
                 <p className="text-xs sm:text-sm text-neutral-800 leading-relaxed font-normal not-italic">
                   {lang === 'mr'
                     ? 'लोकशाही पत्रकार महासंघ भारत ही केवळ पत्रकारांची संघटना नसून पत्रकार, समाजसेवक आणि लोकशाही मूल्यांवर विश्वास ठेवणाऱ्या नागरिकांचे एक संयुक्त राष्ट्रीय कुटुंब आहे. समाजहित, पत्रकारांचे संरक्षण आणि समाजसेवकांच्या कल्याणाचा विचार करून महासंघ विविध सामाजिक, शैक्षणिक आणि जनहिताचे उपक्रम सातत्याने राबवितो.'
-                    : 'Lokshahi Patrakar Mahasangh Bharat is not merely an occupational union, but a unified national family of truth-seeking journalists, social reformers, and citizens dedicated to constitutional democracy.'}
+                    : 'Lokshahi Patrakar Mahasangh Bharat is not merely an occupational union, but a unified national family of truth-seeking journalists, social reformers, and citizens dedicated to constitutional democracy. Prioritizing public interest and journalists’ security, the federation regularly undertakes social, educational, and welfare initiatives nationwide.'}
                 </p>
               </div>
 
               {/* Fearless Journalism Defense */}
-              <div className="rounded-2xl border-2 border-black bg-white p-6 shadow-xs text-left">
-                <h3 className="text-base sm:text-lg font-black text-black tracking-tight mb-2.5">
+              <div className="rounded-2xl border-2 border-black bg-white p-5 sm:p-5.5 shadow-xs text-left">
+                <h3 className="text-base sm:text-lg font-black text-black tracking-tight mb-2">
                   {lang === 'mr'
                     ? 'निर्भय पत्रकारितेच्या रक्षणाचा ठाम निर्धार'
                     : 'Uncompromising Defense of Fearless Journalism'}

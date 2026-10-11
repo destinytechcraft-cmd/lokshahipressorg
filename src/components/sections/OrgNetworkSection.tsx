@@ -4,10 +4,10 @@ import { SectionShell, WFCard } from '../ui/WireframePrimitives';
 import { IndiaNetworkMap } from '../common/IndiaNetworkMap';
 
 const networkStats = [
-  { mr: '७,६००+ सदस्य', en: '7,600+ Members', subMr: 'सदस्यांचे राष्ट्रीय जाळे', subEn: 'National Network', color: 'text-[#172A4A]', bg: 'bg-[#172A4A]/5', border: 'border-[#172A4A]/20' },
-  { mr: '७८ समित्या', en: '78 Committees', subMr: 'राष्ट्रीय, राज्य व स्थानिक समित्या', subEn: 'National, State & Local', color: 'text-[#2855A5]', bg: 'bg-[#2855A5]/5', border: 'border-[#2855A5]/20' },
-  { mr: '११+ वर्षे', en: '11+ Years', subMr: 'सामाजिक व पत्रकारिता क्षेत्रातील वाटचाल', subEn: 'Journey in Media & Social Work', color: 'text-[#E6530C]', bg: 'bg-[#E6530C]/5', border: 'border-[#E6530C]/20' },
-  { mr: 'भारतभर', en: 'Pan-India', subMr: 'राष्ट्रीय कार्यक्षेत्र', subEn: 'National Reach', color: 'text-[#287A18]', bg: 'bg-[#287A18]/5', border: 'border-[#287A18]/20' },
+  { mr: '७,६००+ सदस्य', en: '7,600+ Members', subMr: 'सदस्यांचे देशव्यापी संघटित जाळे', subEn: 'Nationwide Network of Journalists', color: 'text-[#172A4A]', bg: 'bg-[#172A4A]/5', border: 'border-[#172A4A]/20' },
+  { mr: '७८ समित्या', en: '78 Committees', subMr: 'राष्ट्रीय, राज्य व स्थानिक समित्या', subEn: 'National, State & Local Committees', color: 'text-[#2855A5]', bg: 'bg-[#2855A5]/5', border: 'border-[#2855A5]/20' },
+  { mr: '११+ वर्षे', en: '11+ Years', subMr: 'सामाजिक व पत्रकारितेतील वाटचाल', subEn: 'Journey in Media & Social Reforms', color: 'text-[#E6530C]', bg: 'bg-[#E6530C]/10', border: 'border-[#E6530C]/25' },
+  { mr: 'भारतभर', en: 'Pan-India', subMr: 'सर्व राज्यांत कार्यविस्तार व पोहोच', subEn: 'Active Presence Across States', color: 'text-[#287A18]', bg: 'bg-[#287A18]/5', border: 'border-[#287A18]/20' },
 ];
 
 export function OrgNetworkSection() {
@@ -29,16 +29,16 @@ export function OrgNetworkSection() {
             <IndiaNetworkMap />
           </div>
 
-          <div className="flex flex-col gap-3 sm:gap-3.5 justify-center">
+          <div className="flex flex-col gap-2.5 sm:gap-3 justify-center">
             {networkStats.map((item, idx) => (
               <WFCard
                 key={idx}
-                className={`text-center py-4 sm:py-5 px-4 shadow-xs hover:border-current transition-all rounded-xl ${item.bg} ${item.border} flex flex-col items-center justify-center`}
+                className={`text-center py-3 sm:py-3.5 px-4 shadow-xs hover:border-current transition-all rounded-xl ${item.bg} ${item.border} flex flex-col items-center justify-center`}
               >
                 <div className={`text-xl sm:text-2xl font-black ${item.color}`}>
                   {item[lang]}
                 </div>
-                <div className="mt-1 text-xs font-bold text-[#172A4A]/80">
+                <div className="mt-0.5 text-xs font-bold text-[#172A4A]/80">
                   {lang === 'mr' ? item.subMr : item.subEn}
                 </div>
               </WFCard>

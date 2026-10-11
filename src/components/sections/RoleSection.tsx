@@ -41,9 +41,6 @@ export function RoleSection() {
       <div className="space-y-6 text-left">
         {/* Role Headline & Intro */}
         <div className="rounded-xl border-2 border-neutral-300 bg-neutral-50 p-6">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-neutral-400 block mb-1">
-            {lang === 'mr' ? 'प्रमुख उद्दिष्ट' : 'Core Objective'}
-          </span>
           <h3 className="text-xl sm:text-2xl font-black text-neutral-900">
             {lang === 'mr' ? 'शासन – प्रशासन – सर्वसामान्य जनता यांच्यातील दुवा' : 'The Vital Bridge: Government, Administration & the Public'}
           </h3>
